@@ -3,15 +3,24 @@ from difflib import ndiff, unified_diff
 from lxml import etree
 from pathlib import Path
 
+CWD = Path(__file__).parent
+XSLT_DIR = CWD / 'xslt'
+TEST_DIR = CWD / 'test'
 
-def list_test_cases(cwd):
-  xslt_dir = cwd / 'xslt'
-  test_dir = cwd / 'test'
-  for xslt_path in xslt_dir.glob('*.xsl'):
-    for input_path in test_dir.glob(f'{xslt_path.stem}--*--input.xml'):
-      input_name = input_path.stem[:-len('--input')]
-      expected_path = input_path.with_stem(f'{input_name}--expected')
-      yield (xslt_path, input_path, expected_path)
+
+# Helper functions
+
+def list_test_cases():
+  for xslt_path in XSLT_DIR.glob('*.xsl'):
+    xslt_name = xslt_path.stem
+    for test_path in TEST_DIR.glob(f'{xslt_name}--*--input.xml'):
+      test_name = test_path.stem.split('--')[1]
+      yield pytest.param(xslt_name, test_name, id=f'{xslt_name}--{test_name}')
+
+def resolve(path):
+  if not path.exists():
+    pytest.skip(f'Missing path: {path}')
+  return path
 
 def make_transform(xslt_path):
   xslt_tree = etree.parse(xslt_path)
@@ -31,22 +40,19 @@ def compare(actual_tree, expected_tree):
   return ''.join(diff) if has_diff else None
 
 
+# Pytest entry point
 def pytest_generate_tests(metafunc):
-  argnames = ['xslt_path', 'input_path', 'expected_path']
+  argnames = ['xslt_name', 'test_name']
   if not set(argnames) <= set(metafunc.fixturenames):
     raise RuntimeError('Cannot find test function')
-  cwd = Path(metafunc.module.__file__).parent
-  argvalues = list_test_cases(cwd)
-  metafunc.parametrize(argnames, argvalues)
+  metafunc.parametrize(argnames, list_test_cases())
 
 
-def test_transform(xslt_path, input_path, expected_path):
-  if not xslt_path.exists():
-    pytest.skip(f'Missing "xslt" file: {xslt_path.name}')
-  if not input_path.exists():
-    pytest.skip(f'Missing "input" file: {input_path.name}')
-  if not expected_path.exists():
-    pytest.skip(f'Missing "expected" file: {expected_path.name}')
+# Parametrized test function
+def test_transform(xslt_name, test_name):
+  xslt_path = resolve(XSLT_DIR / f'{xslt_name}.xsl')
+  input_path = resolve(TEST_DIR / f'{xslt_name}--{test_name}--input.xml')
+  expected_path = resolve(TEST_DIR /f'{xslt_name}--{test_name}--expected.xml')
 
   transform = make_transform(xslt_path)
 
@@ -59,7 +65,6 @@ def test_transform(xslt_path, input_path, expected_path):
   # print('expected:\n', to_string(expected_tree))
 
   diff = compare(actual_tree, expected_tree)
-  
   if diff:
     print(diff)
     pytest.fail(f'{xslt_path.name}/{input_path.name}', pytrace=False)
