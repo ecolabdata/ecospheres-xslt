@@ -13,6 +13,17 @@ net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
     <gmd:MD_DataIdentification>
       <gmd:resourceConstraints>
         <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                    codeListValue="intellectualPropertyRights"/>
+          </gmd:accessConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString/>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
           <gmd:useConstraints>
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
                                     codeListValue="intellectualPropertyRights"/>
@@ -23,17 +34,6 @@ net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
           </gmd:useConstraints>
           <gmd:otherConstraints>
             <gco:CharacterString>données ouvertes</gco:CharacterString>
-          </gmd:otherConstraints>
-        </gmd:MD_LegalConstraints>
-      </gmd:resourceConstraints>
-      <gmd:resourceConstraints>
-        <gmd:MD_LegalConstraints>
-          <gmd:accessConstraints>
-            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
-                                    codeListValue="intellectualPropertyRights"/>
-          </gmd:accessConstraints>
-          <gmd:otherConstraints>
-            <gco:CharacterString/>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
