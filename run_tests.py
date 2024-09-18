@@ -6,36 +6,37 @@ from pathlib import Path
 CWD = Path(__file__).parent
 XSLT_DIR = CWD / 'xslt'
 TEST_DIR = CWD / 'test'
+FIXTURE_DIR = TEST_DIR / 'fixtures'
 
 
 # Pytest entry point
 def pytest_generate_tests(metafunc):
-  argnames = ['xslt_name', 'test_name']
+  argnames = ['xslt_name', 'fixture_name']
   if not set(argnames) <= set(metafunc.fixturenames):
     raise RuntimeError('Cannot find test function')
   metafunc.parametrize(argnames, list_test_cases())
 
 
 # Parametrized test function
-def test_transform(xslt_name, test_name):
+def test_transform(xslt_name, fixture_name):
   xslt_path = resolve(XSLT_DIR / f'{xslt_name}.xsl')
-  input_path = resolve(TEST_DIR / f'{xslt_name}--{test_name}--input.xml')
-  expected_path = resolve(TEST_DIR /f'{xslt_name}--{test_name}--expected.xml')
+  fixture_path = resolve(FIXTURE_DIR / f'{fixture_name}.xml')
+  expected_path = resolve(TEST_DIR /f'{xslt_name}--{fixture_name}.xml')
 
   transform = make_transform(xslt_path)
 
-  input_tree = etree.parse(input_path)
-  actual_tree = transform(input_tree)
+  fixture_tree = etree.parse(fixture_path)
+  actual_tree = transform(fixture_tree)
   expected_tree = etree.parse(expected_path)
 
-  # print('input:\n', to_string(input_tree))
+  # print('fixture:\n', to_string(fixture_tree))
   # print('actual:\n', to_string(actual_tree))
   # print('expected:\n', to_string(expected_tree))
 
   diff = compare(actual_tree, expected_tree)
   if diff:
     print(diff)
-    pytest.fail(f'{xslt_path.name}/{input_path.name}', pytrace=False)
+    pytest.fail(f'{xslt_path.name}/{fixture_path.name}', pytrace=False)
 
 
 # Helper functions
@@ -43,9 +44,9 @@ def test_transform(xslt_name, test_name):
 def list_test_cases():
   for xslt_path in XSLT_DIR.glob('*.xsl'):
     xslt_name = xslt_path.stem
-    for test_path in TEST_DIR.glob(f'{xslt_name}--*--input.xml'):
-      test_name = test_path.stem.split('--')[1]
-      yield pytest.param(xslt_name, test_name, id=f'{xslt_name}--{test_name}')
+    for test_path in TEST_DIR.glob(f'{xslt_name}--*.xml'):
+      fixture_name = test_path.stem.split('--')[1]
+      yield pytest.param(xslt_name, fixture_name, id=test_path.stem)
 
 def resolve(path):
   if not path.exists():
