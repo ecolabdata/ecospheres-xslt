@@ -64,7 +64,7 @@ def resolve(path):
 def make_transform(xslt_path):
   xslt_tree = etree.parse(xslt_path)
   transform = etree.XSLT(xslt_tree)
-  return lambda tree: transform(tree, CoupledResourceLookUp="'disabled'")
+  return lambda tree: transform(tree)
 
 def to_string(tree):
   etree.indent(tree)
