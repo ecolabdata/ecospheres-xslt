@@ -1,6 +1,6 @@
-# ecospheres-mdfix
+# ecospheres-xslt
 
-Collection of XSLT to fix ISO-19139 XML metadata according to https://ecospheres.gitbook.io/recommandations-iso-dcat/.
+Collection of XSLT to adapt ISO-19139 XML metadata according to https://ecospheres.gitbook.io/recommandations-iso-dcat/.
 
 
 ## Running tests
