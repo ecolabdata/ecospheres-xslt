@@ -7,9 +7,9 @@ from pathlib import Path
 init()
 
 CWD = Path(__file__).parent
-XSLT_DIR = CWD / "xslt"
-TEST_DIR = CWD / "test"
-FIXTURE_DIR = TEST_DIR / "fixtures"
+FIXTURE_DIR = CWD / "fixtures"
+TEST_DIR = CWD / "tests"
+XSLT_DIR = CWD / "xslts"
 
 
 # Pytest entry point
