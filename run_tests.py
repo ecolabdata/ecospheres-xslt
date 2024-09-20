@@ -1,7 +1,10 @@
 import pytest
+from colorama import Fore, Back, Style, init
 from difflib import ndiff, unified_diff
 from lxml import etree
 from pathlib import Path
+
+init()
 
 CWD = Path(__file__).parent
 XSLT_DIR = CWD / "xslt"
@@ -30,13 +33,7 @@ def test_transform(xslt_name, fixture_name, test_suffix):
   if test_suffix == "xml":
     actual_tree = transform(fixture_tree)
     expected_tree = etree.parse(expected_path)
-    # print("fixture:\n", to_string(fixture_tree))
-    # print("actual:\n", to_string(actual_tree))
-    # print("expected:\n", to_string(expected_tree))
-    diff = compare(actual_tree, expected_tree)
-    if diff:
-      print(diff)
-      pytest.fail(f"{xslt_path.name}/{fixture_path.name}", pytrace=False)
+    compare(actual_tree, expected_tree)
   elif test_suffix == "err":
     expected_error = expected_path.open().read().strip()
     with pytest.raises(etree.XSLTApplyError) as e:
@@ -71,9 +68,20 @@ def to_string(tree):
   return etree.tostring(tree, pretty_print=True, encoding="unicode")
 
 def compare(actual_tree, expected_tree):
-  actual_lines = to_string(actual_tree).splitlines(keepends=True)
-  expected_lines = to_string(expected_tree).splitlines(keepends=True)
-  # diff = unified_diff(actual_lines, expected_lines, lineterm="")
-  diff = ndiff(actual_lines, expected_lines)
-  has_diff = any(d[0] != " " for d in diff)
-  return "".join(diff) if has_diff else None
+  actual_lines = to_string(actual_tree).splitlines()
+  expected_lines = to_string(expected_tree).splitlines()
+  diff = unified_diff(expected_lines, actual_lines, lineterm="")
+  if any(d[0] != " " for d in diff):
+    print("\n".join(color_diff(diff)))
+    pytest.fail("Unexpected file contents:\n" + "\n".join(diff), pytrace=False)
+
+def color_diff(diff):
+  for line in diff:
+    if line.startswith('+'):
+      yield Fore.GREEN + line + Fore.RESET
+    elif line.startswith('-'):
+      yield Fore.RED + line + Fore.RESET
+    elif line.startswith('^'):
+      yield Fore.BLUE + line + Fore.RESET
+    else:
+      yield line
