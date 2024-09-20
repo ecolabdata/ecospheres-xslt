@@ -39,7 +39,7 @@ def test_transform(xslt_name, fixture_name, test_suffix):
         expected_error = expected_path.open().read().strip()
         with pytest.raises(etree.XSLTApplyError) as e:
             transform(fixture_tree)
-        assert str(e.value) == expected_error
+        assert str(e.value).strip() == expected_error
 
 
 def list_test_cases():
