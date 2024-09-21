@@ -17,11 +17,11 @@ pytest run_tests.py
 A test case for a given `xslts/$transform.xml` is the combination of:
 - An input metadata record: `fixtures/$input.xml`.
 - Either:
-  - an expected transformed metadata record: `tests/$transform--$input.xml`.
-  - an expected error message: `tests/$transform--$input.err`.
+  - An expected transformed metadata record: `tests/$transform.$input.xml`.
+  - An expected error message: `tests/$transform.$input.err`.
 
 ### Adding fixtures
 
-- Metadata records copied from real catalogs should be named as `<catalog-name>-<record-id>.xml`.
-- Fake test records should be named as `sample-<short-description>.xml`.
+- Metadata records copied from real catalogs should be named as `<catalog-name>--<record-id>.xml`.
+- Fake test records should be named as `sample--<short-description>.xml`.
 

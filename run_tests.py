@@ -10,6 +10,7 @@ CWD = Path(__file__).parent
 FIXTURE_DIR = CWD / "fixtures"
 TEST_DIR = CWD / "tests"
 XSLT_DIR = CWD / "xslts"
+XSLT_FIXTURE_SEP = "."
 
 
 # Pytest entry point
@@ -24,7 +25,7 @@ def pytest_generate_tests(metafunc):
 def test_transform(xslt_name, fixture_name, test_suffix):
     xslt_path = resolve(XSLT_DIR / f"{xslt_name}.xsl")
     fixture_path = resolve(FIXTURE_DIR / f"{fixture_name}.xml")
-    expected_path = resolve(TEST_DIR / f"{xslt_name}--{fixture_name}.{test_suffix}")
+    expected_path = resolve(TEST_DIR / f"{xslt_name}{XSLT_FIXTURE_SEP}{fixture_name}.{test_suffix}")
 
     transform = make_transform(xslt_path)
 
@@ -44,11 +45,11 @@ def test_transform(xslt_name, fixture_name, test_suffix):
 def list_test_cases():
     for xslt_path in XSLT_DIR.glob("*.xsl"):
         xslt_name = xslt_path.stem
-        for test_path in TEST_DIR.glob(f"{xslt_name}--*.*"):
+        for test_path in TEST_DIR.glob(f"{xslt_name}{XSLT_FIXTURE_SEP}*.*"):
             test_suffix = test_path.suffix[1:]
             if test_suffix not in ("xml", "err"):
                 continue
-            fixture_name = test_path.stem.split("--")[1]
+            fixture_name = test_path.stem.split(XSLT_FIXTURE_SEP)[1]
             yield pytest.param(xslt_name, fixture_name, test_suffix, id=test_path.stem)
 
 
