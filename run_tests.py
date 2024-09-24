@@ -76,7 +76,7 @@ def compare(actual_tree, expected_tree):
     diff = unified_diff(expected_lines, actual_lines, lineterm="")
     if any(d[0] != " " for d in diff):
         print("\n".join(color_diff(diff)))
-        pytest.fail("Transformation output differs from expected\n" + "\n".join(diff), pytrace=False)
+        pytest.fail("XSLT output != expected\n" + "\n".join(diff), pytrace=False)
 
 
 def color_diff(diff):
