@@ -81,7 +81,7 @@ def compare(actual_tree, expected_tree):
 
 def color_diff(diff):
     for line in diff:
-        if line.startswith("+"):
+        if line.startswith("+") and not line.startswith("+++"):
             yield Fore.GREEN + line + Fore.RESET
         elif line.startswith("-"):
             yield Fore.RED + line + Fore.RESET
