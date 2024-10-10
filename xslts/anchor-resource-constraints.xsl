@@ -91,7 +91,10 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
         <item>
           <key>noLimitations</key>
           <label>Pas de restriction d'accès public</label>
+          <alt>Pas de restriction d'accès publique</alt>
+          <alt>Pas de restriction d'accès au public</alt>
           <alt>Pas de restriction d'accès public selon INSPIRE</alt>
+          <alt>Directive 2007/2/CE (INSPIRE), pas de restriction d'accès public</alt>
         </item>
         <item>
           <key>INSPIRE_Directive_Article13_1a</key>
@@ -136,11 +139,11 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
       <xsl:with-param name="entries">
         <item>
           <key>noConditionsApply</key>
-          <label>aucune condition ne s'applique</label>
+          <label>Aucune condition ne s'applique</label>
         </item>
         <item>
           <key>conditionsUnknown</key>
-          <label>conditions inconnues</label>
+          <label>Conditions inconnues</label>
         </item>
       </xsl:with-param>
     </xsl:call-template>
