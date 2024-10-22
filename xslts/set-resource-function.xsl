@@ -13,6 +13,7 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
 
   <xsl:param name="match-string"/>
   <xsl:param name="match-field" select="'name'"/>
+  <xsl:param name="function-type" select="'download'"/>
   <xsl:param name="override-existing" select="'no'"/>
 
   <xsl:variable name="match-string-normalized">
@@ -49,7 +50,11 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
           <xsl:choose>
             <xsl:when test="contains($input-normalized, $match-string-normalized)">
               <gmd:function>
-                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode">
+                  <xsl:attribute name="codeListValue">
+                    <xsl:value-of select="$function-type"/>
+                  </xsl:attribute>
+                </gmd:CI_OnLineFunctionCode>
               </gmd:function>
             </xsl:when>
             <xsl:otherwise>
