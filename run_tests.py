@@ -1,4 +1,5 @@
 import pytest
+import tomllib
 from colorama import Fore, init
 from difflib import unified_diff
 from lxml import etree
@@ -15,30 +16,31 @@ XSLT_FIXTURE_SEP = "."
 
 # Pytest entry point
 def pytest_generate_tests(metafunc):
-    argnames = ["xslt_name", "fixture_name", "test_suffix"]
+    argnames = ["xslt_name", "fixture_name", "test_stem", "test_suffix", "has_config"]
     if not set(argnames) <= set(metafunc.fixturenames):
         raise RuntimeError("Cannot find test function")
     metafunc.parametrize(argnames, list_test_cases())
 
 
 # Pytest parametrized test function
-def test_transform(xslt_name, fixture_name, test_suffix):
+def test_transform(xslt_name, fixture_name, test_stem, test_suffix, has_config):
     xslt_path = resolve(XSLT_DIR / f"{xslt_name}.xsl")
     fixture_path = resolve(FIXTURE_DIR / f"{fixture_name}.xml")
-    expected_path = resolve(TEST_DIR / f"{xslt_name}{XSLT_FIXTURE_SEP}{fixture_name}.{test_suffix}")
+    expected_path = resolve(TEST_DIR / f"{test_stem}.{test_suffix}")
+    test_params = load_test_params(resolve(TEST_DIR / f"{test_stem}.conf")) if has_config else {}
 
     transform = make_transform(xslt_path)
 
     fixture_tree = etree.parse(fixture_path)
 
     if test_suffix == "xml":
-        actual_tree = transform(fixture_tree)
+        actual_tree = transform(fixture_tree, **test_params)
         expected_tree = etree.parse(expected_path)
         compare(actual_tree, expected_tree)
     elif test_suffix == "err":
         expected_error = expected_path.open().read().strip()
         with pytest.raises(etree.XSLTApplyError) as e:
-            transform(fixture_tree)
+            transform(fixture_tree, **test_params)
         assert str(e.value) == expected_error
 
 
@@ -49,21 +51,32 @@ def list_test_cases():
             test_suffix = test_path.suffix[1:]
             if test_suffix not in ("xml", "err"):
                 continue
-            fixture_name = test_path.stem.split(XSLT_FIXTURE_SEP)[1]
-            yield pytest.param(xslt_name, fixture_name, test_suffix, id=test_path.stem)
+            test_stem = test_path.stem
+            parts = test_stem.split(XSLT_FIXTURE_SEP)
+            fixture_name = parts[1]
+            has_config = len(parts) > 2
+            yield pytest.param(xslt_name, fixture_name, test_stem, test_suffix, has_config, id=test_stem)
 
 
-def resolve(path):
+def resolve(path, silent=False):
     if not path.exists():
-        pytest.skip(f"Missing path: {path}")
+        if silent:
+            return None
+        else:
+            pytest.skip(f"Missing path: {path}")
     return path
 
 
 def make_transform(xslt_path):
     xslt_tree = etree.parse(xslt_path)
     transform = etree.XSLT(xslt_tree)
-    return lambda tree: transform(tree)
+    return lambda tree, *args, **kw: transform(tree, *args, **kw)
 
+
+def load_test_params(config_path):
+    with config_path.open(mode="rb") as f:
+        params = tomllib.load(f).get("params", {})
+    return {k: etree.XSLT.strparam(v) for k, v in params.items()}
 
 def to_string(tree):
     etree.indent(tree)
