@@ -5,16 +5,16 @@ Identification semi-manuelle des distributions non détectables par le XSLT SEMI
 https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/rendre-les-distributions-identifiables
 -->
 
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="2.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 exclude-result-prefixes="#all">
 
-  <xsl:param name="match-string"/>
-  <xsl:param name="match-field" select="'name'"/>
-  <xsl:param name="function-type" select="'download'"/>
-  <xsl:param name="override-existing" select="'no'"/>
+  <xsl:param name="match-string" required="yes"/>
+  <xsl:param name="match-field" select="'name'" required="yes"/>
+  <xsl:param name="function-type" select="'download'" required="yes"/>
+  <xsl:param name="override-existing" select="'no'" required="yes"/>
 
   <xsl:variable name="match-string-normalized">
     <xsl:call-template name="normalize-string">
@@ -23,10 +23,6 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
   </xsl:variable>
 
   <xsl:template match="gmd:transferOptions/*/gmd:onLine/gmd:CI_OnlineResource">
-    <xsl:if test="$match-string-normalized = ''">
-      <xsl:message terminate="yes">Error: Empty parameter "match-string"</xsl:message>
-    </xsl:if>
-      
     <xsl:variable name="function">
       <xsl:choose>
         <xsl:when test="not(gmd:function) or $override-existing = 'yes'">
