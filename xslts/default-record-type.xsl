@@ -14,7 +14,6 @@ Si `gmd:hierarchyLevel` est absent, la transformation ajoute :
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
-                xmlns:gco="http://www.isotc211.org/2005/gco"
                 exclude-result-prefixes="#all">
 
   <xsl:variable name="elementMissing" select="not(/gmd:MD_Metadata/gmd:hierarchyLevel)"/>
