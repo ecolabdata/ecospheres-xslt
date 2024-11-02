@@ -17,6 +17,8 @@ Si `gmd:hierarchyLevel` est absent, la transformation ajoute :
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 exclude-result-prefixes="#all">
 
+  <xsl:output encoding="UTF-8"/>
+
   <xsl:variable name="elementMissing" select="not(/gmd:MD_Metadata/gmd:hierarchyLevel)"/>
   <xsl:variable name="insertAfter" select="name(/gmd:MD_Metadata/*[name()='gmd:fileIdentifier' or name()='gmd:language'
                                            or name()='gmd:characterSet' or name()='gmd:parentIdentifier'][last()])"/>
