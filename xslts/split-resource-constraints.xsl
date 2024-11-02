@@ -10,6 +10,8 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 exclude-result-prefixes="#all">
 
+  <xsl:output encoding="UTF-8"/>
+
   <!-- non-ambiguous OC = ACo + UCx + OC + UL? => ACo + OC / UCx + UL? -->
   <xsl:template match="gmd:resourceConstraints[gmd:MD_LegalConstraints[
                          gmd:accessConstraints/gmd:MD_RestrictionCode[@codeListValue = 'otherRestrictions']

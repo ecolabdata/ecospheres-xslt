@@ -15,6 +15,8 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
                 extension-element-prefixes="exsl"
                 exclude-result-prefixes="#all">
 
+  <xsl:output encoding="UTF-8"/>
+
   <!--
       Text-to-anchor mappings
   -->
