@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Supprime les namespaces XML inutilisés.
+"Prépare" un catalogue à l'utilisation d'ISOmorphe.
 
-https://stackoverflow.com/a/4594626
+Les mises à jour de fiches Geonetwork peuvent provoquer des modifications de la structure des fiches XML internes à Geonetwork.
+Ce XSLT a pour objectif de :
+- Provoquer ces modifications internes, pour éviter qu'elles soient mélangées avec les modifications d'autres transformations ISOmorphe. 
+- Minimiser les modifications internes, en supprimant les namespaces XML inutilisés, pour éviter de générer des modifications liées à ces namespaces inutiles. 
+
+Le template de suppression des namespaces inutilisés provient de : https://stackoverflow.com/a/4594626
 -->
 
 <xsl:stylesheet version="1.0"
