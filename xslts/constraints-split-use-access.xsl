@@ -37,7 +37,7 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
 
   <!-- non-ambiguous OC = ACx + UCo + OC + UL? => noop -->
   <!-- no mapping for now, too many misclassifications -->
-  
+
   <!-- special case of ambiguous OC = (ACo + UCo + 1OC + UL) | (ACx + UCx + 1OC + UL) => AC + OC / UC + UL -->
   <xsl:template match="gmd:resourceConstraints[gmd:MD_LegalConstraints[
                          (

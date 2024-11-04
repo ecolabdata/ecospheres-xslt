@@ -24,4 +24,3 @@ A test case for a given `xslts/$transform.xml` is the combination of:
 
 - Metadata records copied from real catalogs should be named as `<catalog-name>--<record-id>.xml`.
 - Fake test records should be named as `sample--<short-description>.xml`.
-

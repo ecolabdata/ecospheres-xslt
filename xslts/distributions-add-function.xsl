@@ -81,7 +81,7 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
-    
+
 
   <!--
       Helpers
