@@ -25,6 +25,10 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
   </xsl:variable>
 
   <xsl:template match="gmd:transferOptions/*/gmd:onLine/gmd:CI_OnlineResource">
+    <xsl:if test="$match-string-normalized = ''">
+      <xsl:message terminate="yes">Error: Empty parameter "match-string"</xsl:message>
+    </xsl:if>
+
     <xsl:variable name="function">
       <xsl:choose>
         <xsl:when test="not(gmd:function) or $override-existing = 'yes'">
