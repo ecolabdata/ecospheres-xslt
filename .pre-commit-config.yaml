@@ -1,0 +1,20 @@
+repos:
+  # https://github.com/pre-commit/pre-commit-hooks#pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+        exclude: (fixtures|tests)/.*
+      - id: end-of-file-fixer
+        exclude: (fixtures|tests)/.*
+      - id: trailing-whitespace
+        exclude: (fixtures|tests)/.*
+      - id: check-added-large-files
+        exclude: (fixtures|tests)/.*
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.1 # Ruff version
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format

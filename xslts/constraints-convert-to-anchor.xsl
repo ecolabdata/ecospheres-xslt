@@ -255,7 +255,7 @@ https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnee
       </item>
     </xsl:for-each>
   </xsl:template>
-  
+
   <xsl:template name="lookup-label">
     <xsl:param name="lookup-table"/>
     <xsl:param name="label"/>

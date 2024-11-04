@@ -27,7 +27,9 @@ def test_transform(xslt_name, fixture_name, test_stem, test_suffix, has_config):
     xslt_path = resolve(XSLT_DIR / f"{xslt_name}.xsl")
     fixture_path = resolve(FIXTURE_DIR / f"{fixture_name}.xml")
     expected_path = resolve(TEST_DIR / f"{test_stem}.{test_suffix}")
-    test_params = load_test_params(resolve(TEST_DIR / f"{test_stem}.conf")) if has_config else {}
+    test_params = (
+        load_test_params(resolve(TEST_DIR / f"{test_stem}.conf")) if has_config else {}
+    )
 
     transform = make_transform(xslt_path)
 
@@ -55,7 +57,14 @@ def list_test_cases():
             parts = test_stem.split(XSLT_FIXTURE_SEP)
             fixture_name = parts[1]
             has_config = len(parts) > 2
-            yield pytest.param(xslt_name, fixture_name, test_stem, test_suffix, has_config, id=test_stem)
+            yield pytest.param(
+                xslt_name,
+                fixture_name,
+                test_stem,
+                test_suffix,
+                has_config,
+                id=test_stem,
+            )
 
 
 def resolve(path, silent=False):
@@ -77,6 +86,7 @@ def load_test_params(config_path):
     with config_path.open(mode="rb") as f:
         params = tomllib.load(f).get("params", {})
     return {k: etree.XSLT.strparam(v) for k, v in params.items()}
+
 
 def to_string(tree):
     etree.indent(tree)
