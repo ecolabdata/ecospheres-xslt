@@ -17,8 +17,7 @@ Un tel cas ne respectant pas le standard INSPIRE, il est difficile motiver une �
 
 ## Limitations
 
-La transformation prend en charge uniquement les cas pour lesquels la séparation des conditions d'utilisation et d'accès : 
-
+La transformation prend en charge uniquement les cas pour lesquels la séparation des conditions d'utilisation et d'accès :
 - améliore la prise en charge des métadonnées par data.gouv.fr ;
 - n'est pas ambigue, ou peut être désambiguïsée de manière relativement fiable ;
 - n'affecte pas significativement l'interprétation de cette section dans le catalogue d'origine.
@@ -35,4 +34,4 @@ TODO
 
 ## Références
 
-[https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/separer-la-licence-des-conditions-dacces](https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/separer-la-licence-des-conditions-dacces)
+https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/separer-la-licence-des-conditions-dacces

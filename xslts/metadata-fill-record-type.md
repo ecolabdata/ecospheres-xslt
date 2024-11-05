@@ -30,5 +30,4 @@ Si `gmd:hierarchyLevel` est absent, la transformation ajoute :
 
 ## Références
 
-[https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/veiller-a-ce-que-les-jeux-de-donnees-soient-reconnaissables-comme-tels](https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/veiller-a-ce-que-les-jeux-de-donnees-soient-reconnaissables-comme-tels)
-
+https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/veiller-a-ce-que-les-jeux-de-donnees-soient-reconnaissables-comme-tels

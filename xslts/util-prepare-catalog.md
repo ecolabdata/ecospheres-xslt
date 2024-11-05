@@ -13,7 +13,6 @@ Aucun.
 Les mises à jour de fiches Geonetwork peuvent provoquer des modifications de la structure des fiches XML internes à Geonetwork.
 
 Ce XSLT a pour objectif de :
-
 - provoquer ces modifications internes, pour éviter qu'elles soient mélangées avec les modifications d'autres transformations ISOmorphe ;
 - minimiser les modifications internes, en supprimant les namespaces XML inutilisés, pour éviter de générer des modifications liées à ces namespaces inutiles.
 
@@ -30,5 +29,5 @@ Dans la mesure où les modifications sont ici "internes" à Geonetwork, il peut 
 
 ## Références
 
-[https://github.com/ecolabdata/ecospheres-isomorphe/issues/99](https://github.com/ecolabdata/ecospheres-isomorphe/issues/99)
+https://github.com/ecolabdata/ecospheres-isomorphe/issues/99
 

@@ -25,4 +25,4 @@ TODO
 
 ## Références
 
-[https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/faciliter-la-reconnaissance-des-licences](https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/faciliter-la-reconnaissance-des-licences)
+https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/faciliter-la-reconnaissance-des-licences

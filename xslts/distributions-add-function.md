@@ -19,7 +19,6 @@ data.gouv.fr n'affiche que les distributions au sens DCAT dans l'onglet "Fichier
 Les autres distributions au sens ISO sont actuellement ignorées.
 
 Le convertisseur SEMICeu identifie une distribution (au sens ISO) comme distribution (au sens DCAT) uniquement dans les conditions suivantes : 
-
 - l'URL de la distribution contient "request=GetCapabilities", ou
 - la distribution déclare une `gmd:function` de type "download, "offlineAccess" ou "order".
 
@@ -54,5 +53,5 @@ Exemples de recherche dans le champ "url" :
 
 ## Références
 
-[https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/rendre-les-distributions-identifiables](https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/rendre-les-distributions-identifiables)
+https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/rendre-les-distributions-identifiables
 
