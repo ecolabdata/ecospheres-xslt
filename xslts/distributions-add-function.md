@@ -37,18 +37,45 @@ Attention à utiliser des chaîne de caractères suffisamment précises pour év
 
 ## Exemples
 
-TODO
+```
+<gmd:CI_OnlineResource>
+  <gmd:linkage>
+    <gmd:URL>http://atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource?id=...</gmd:URL>
+  </gmd:linkage>
+  <gmd:name>
+    <gco:CharacterString>Téléchargement simple (Atom) du jeu et des documents associés via internet</gco:CharacterString>
+  </gmd:name>
+</gmd:CI_OnlineResource>
+```
 
-Exemples de recherche dans le champ "name" : 
+devient :
 
-- Accès au lien ATOM de téléchargement
-- Accès au téléchargement des données
-- Téléchargement direct des données
-- Télécharger les données
+```
+<gmd:CI_OnlineResource>
+  <gmd:linkage>
+    <gmd:URL>http://atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource?id=...</gmd:URL>
+  </gmd:linkage>
+  <gmd:name>
+    <gco:CharacterString>Téléchargement simple (Atom) du jeu et des documents associés via internet</gco:CharacterString>
+  </gmd:name>
+  <gmd:function>
+    <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+  </gmd:function>
+</gmd:CI_OnlineResource>
+```
 
-Exemples de recherche dans le champ "url" :
+Ce résultat peut etre obtenu avec les recherches suivantes (entre autres) : 
+- `match-field` = "name" / `match-string` : "Téléchargement simple (Atom)".
+- `match-field` = "url" / `match-string` : "atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource"
 
-- TODO
+Exemples courants de recherches dans le champ "name" :
+- "Accès au lien ATOM de téléchargement"
+- "Accès au téléchargement des données"
+- "Téléchargement direct des données"
+- "Téléchargement simple (Atom)"
+- "Télécharger les données"
+
+Les recherches sur le champ "url" dépendront généralement de la plateforme utilisée par votre catalogue.
 
 
 ## Références

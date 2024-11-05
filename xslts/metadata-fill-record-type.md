@@ -15,7 +15,7 @@ L'utilisation du type "dataset" par défaut correspond au comportement d'autres 
 
 ## Exemples
 
-Si `gmd:hierarchyLevel` est absent, la transformation ajoute :
+Lorsque `gmd:hierarchyLevel` est absent, la transformation ajoute :
 
     <gmd:MD_Metadata...>
       <gmd:fileIdentifier>...</gmd:fileIdentifier>

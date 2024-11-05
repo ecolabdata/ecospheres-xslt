@@ -29,8 +29,55 @@ La mise en conformité générale avec le standard INSPIRE ne fait pas partie de
 
 ## Exemples
 
-TODO
+```
+<gmd:resourceConstraints>
+  <gmd:MD_LegalConstraints>
+    <gmd:useLimitation>
+       <gco:CharacterString>Licence Ouverte / Open Licence Version 2.0  https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf</gco:CharacterString>
+    </gmd:useLimitation>
+    <gmd:useLimitation>
+      <gco:CharacterString>Aucun des articles de la loi ne peut être invoqué pour justifier d'une restriction d'accès public.</gco:CharacterString>
+    </gmd:useLimitation>
+    <gmd:accessConstraints>
+      <gmd:MD_RestrictionCode codeListValue="otherRestrictions" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"/>
+    </gmd:accessConstraints>
+    <gmd:useConstraints>
+      <gmd:MD_RestrictionCode codeListValue="license" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"/>
+    </gmd:useConstraints>
+    <gmd:otherConstraints>
+      <gco:CharacterString>Pas de restriction d'accès public selon INSPIRE</gco:CharacterString>
+    </gmd:otherConstraints>
+  </gmd:MD_LegalConstraints>
+</gmd:resourceConstraints>
+```
 
+devient :
+
+```
+<gmd:resourceConstraints>
+  <gmd:MD_LegalConstraints>
+    <gmd:accessConstraints>
+      <gmd:MD_RestrictionCode codeListValue="otherRestrictions" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"/>
+    </gmd:accessConstraints>
+    <gmd:otherConstraints>
+      <gco:CharacterString>Pas de restriction d'accès public selon INSPIRE</gco:CharacterString>
+    </gmd:otherConstraints>
+  </gmd:MD_LegalConstraints>
+</gmd:resourceConstraints>
+<gmd:resourceConstraints>
+  <gmd:MD_LegalConstraints>
+    <gmd:useLimitation>
+      <gco:CharacterString>Licence Ouverte / Open Licence Version 2.0  https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf</gco:CharacterString>
+    </gmd:useLimitation>
+    <gmd:useLimitation>
+      <gco:CharacterString>Aucun des articles de la loi ne peut être invoqué pour justifier d'une restriction d'accès public.</gco:CharacterString>
+    </gmd:useLimitation>
+    <gmd:useConstraints>
+      <gmd:MD_RestrictionCode codeListValue="license" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"/>
+    </gmd:useConstraints>
+  </gmd:MD_LegalConstraints>
+</gmd:resourceConstraints>
+```
 
 ## Références
 
