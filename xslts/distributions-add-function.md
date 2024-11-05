@@ -5,26 +5,12 @@ Ajoute un élément de type `gmd:function` à une distribution.
 
 ## Paramètres
 
-`match-string` (requis)
-
-Chaîne de caractères à rechercher dans `match-field`.
-
-`match-field` (requis)<br/>
-
-Champ dans lequel rechercher `match-string`, parmi :
-
-- "name" : Recherche dans `gmd:name/gco:CharacterString`.
-- "url" : Recherche dans `gmd:linkage/gmd:URL`.
-
-`function-type` (requis)
-
-Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order".
-
-`override-existing` (requis)
-
-Si "no", seules les distributions ne contenant pas de `gmd:function` seront prises en compte.
-
-Si "yes", les distributions contenant déjà un `gmd:function` seront également prises en compte, et le `gmd:function` existant sera remplacé par un nouveau de type `function-type`.
+| Paramètre           | Requis | Défaut     | Description |
+|:--------------------|:-------|:-----------|:------------|
+| `match-string`      | oui    | \<aucun>   | Chaîne de caractères à rechercher dans `match-field`. |
+| `match-field`       | oui    | "name"     | Champ dans lequel rechercher `match-string`, parmi : <ul><li>"name" : Recherche dans `gmd:name/gco:CharacterString`.</li><li>"url" : Recherche dans `gmd:linkage/gmd:URL`.</li></ul> |
+| `function-type`     | oui    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
+| `override-existing` | oui    | "no"       | Si "no", seules les distributions ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les distributions contenant déjà un `gmd:function` sont également prises en compte, et un `gmd:function` existant sera remplacé. |
 
 
 ## Motivation
