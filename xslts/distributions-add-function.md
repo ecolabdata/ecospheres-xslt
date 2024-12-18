@@ -5,10 +5,7 @@ Ajoute un élément de type `gmd:function` à une distribution.
 
 ## Paramètres
 
-<div class="fr-table">
-<div class="fr-table__wrapper">
-<div class="fr-table__container">
-<div class="fr-table__content">
+<div class="fr-table"><div class="fr-table__wrapper"><div class="fr-table__container"><div class="fr-table__content">
 
 | Paramètre           | Requis | Défaut     | Description |
 |:--------------------|:-------|:-----------|:------------|
@@ -17,10 +14,7 @@ Ajoute un élément de type `gmd:function` à une distribution.
 | `function-type`     | oui    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
 | `override-existing` | oui    | "no"       | Si "no", seules les distributions ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les distributions contenant déjà un `gmd:function` sont également prises en compte, et un `gmd:function` existant sera remplacé. |
 
-</div>
-</div>
-</div>
-</div>
+</div></div></div></div>
 
 
 ## Motivation
