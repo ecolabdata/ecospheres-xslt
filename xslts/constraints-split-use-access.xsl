@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Sépare la licence des conditions d'accès
-
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/separer-la-licence-des-conditions-dacces
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/constraints-split-use-access.md
 -->
 
 <xsl:stylesheet version="1.0"

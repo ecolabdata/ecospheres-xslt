@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Identification semi-manuelle des distributions non détectables par le XSLT SEMICeu.
-
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/rendre-les-distributions-identifiables
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/distributions-add-function.md
 -->
 
 <xsl:stylesheet version="2.0"

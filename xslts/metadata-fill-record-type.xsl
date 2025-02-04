@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Définit le type du record lorsqu'il est manquant
-
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/veiller-a-ce-que-les-jeux-de-donnees-soient-reconnaissables-comme-tels
-
-Si `gmd:hierarchyLevel` est absent, la transformation ajoute :
-
-    <gmd:hierarchyLevel>
-      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset"/>
-    </gmd:hierarchyLevel>
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/metadata-fill-record-type.md
 -->
 
 <xsl:stylesheet version="1.0"

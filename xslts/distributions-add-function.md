@@ -84,5 +84,5 @@ Les recherches sur le champ "url" dépendront généralement de la plateforme ut
 
 ## Références
 
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/rendre-les-distributions-identifiables
+https://github.com/ecolabdata/ecospheres/wiki/Recommandations-ISO-DCAT#rendre-les-distributions-identifiables
 
