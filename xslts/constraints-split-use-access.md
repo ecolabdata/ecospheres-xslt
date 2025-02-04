@@ -81,4 +81,4 @@ devient :
 
 ## Références
 
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/separer-la-licence-des-conditions-dacces
+https://github.com/ecolabdata/ecospheres/wiki/Recommandations-ISO-DCAT#s%C3%A9parer-la-licence-des-conditions-dacc%C3%A8s

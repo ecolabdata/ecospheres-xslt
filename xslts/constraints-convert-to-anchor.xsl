@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Convertit le texte libre d'une otherRestrictions en gmx:Anchor lorsqu'il n'y a pas d'ambiguité.
-
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/faciliter-la-reconnaissance-des-licences
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/constraints-convert-to-anchor.md
 -->
 
 <xsl:stylesheet version="1.0"

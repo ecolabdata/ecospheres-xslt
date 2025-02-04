@@ -94,4 +94,4 @@ devient :
 
 ## Références
 
-https://ecospheres.gitbook.io/recommandations-iso-dcat/adaptation-des-metadonnees-iso-19139-pour-faciliter-la-transformation-en-dcat/faciliter-la-reconnaissance-des-licences
+https://github.com/ecolabdata/ecospheres/wiki/Recommandations-ISO-DCAT#faciliter-la-reconnaissance-des-licences
