@@ -1,0 +1,1 @@
+[isomorphe:check] 'otherConstraints' ambigu.
