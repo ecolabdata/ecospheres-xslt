@@ -8,6 +8,11 @@ Sépare les conditions d'utilisation des conditions d'accès.
 Aucun.
 
 
+## Prérequis
+
+- <a href="constraints-convert-to-anchor">`constraints-convert-to-anchor`</a> (recommandé).
+
+
 ## Motivation
 
 Lorsqu'un élément `gmd:resourceConstraints` contient à la fois un élément `gmd:accessConstraints` et un élément `gmd:useConstraints`, tous les éléments `gmd:otherConstraints` également présents vont être doublonnés en condition d'utilisation *et* en condition d'accès par le convertisseur SEMICeu ISO-19139 vers GeoDCAT-AP.
