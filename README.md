@@ -1,6 +1,6 @@
 # ecospheres-xslt
 
-Collection of XSLTs to adapt ISO-19139 XML metadata according to https://ecospheres.gitbook.io/recommandations-iso-dcat/.
+Collection of XSLTs to adapt ISO-19139 XML metadata according to https://github.com/ecolabdata/ecospheres/wiki/Recommandations-ISO-DCAT.
 
 
 ## Testing

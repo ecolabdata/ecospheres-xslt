@@ -20,7 +20,7 @@ Lorsqu'un élément `gmd:resourceConstraints` contient à la fois un élément `
 Un tel cas ne respectant pas le standard INSPIRE, il est difficile motiver une évolution du convertisseur SEMICeu.
 
 
-## Limitations
+## Limites
 
 La transformation prend en charge uniquement les cas pour lesquels la séparation des conditions d'utilisation et d'accès :
 - améliore la prise en charge des métadonnées par data.gouv.fr ;
