@@ -8,6 +8,11 @@ Définit le type de la ressource lorsqu'il est manquant.
 Aucun.
 
 
+## Prérequis
+
+Aucun.
+
+
 ## Motivation
 
 L'utilisation du type "dataset" par défaut correspond au comportement d'autres outils de l'écosystème.

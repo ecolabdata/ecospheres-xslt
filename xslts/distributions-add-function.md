@@ -17,6 +17,11 @@ Ajoute un élément de type `gmd:function` à une distribution.
 </div></div></div></div>
 
 
+## Prérequis
+
+Aucun.
+
+
 ## Motivation
 
 data.gouv.fr n'affiche que les distributions au sens DCAT dans l'onglet "Fichiers".
@@ -32,7 +37,7 @@ Pour les services de types WFS/WMS/WMTS, de nombreuses fiches INSPIRE peuvent r�
 Cependant, pour d'autres types de services (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter un `gmd:function` de type "download".
 
 
-## Limitations
+## Limites
 
 Seule la recherche par chaîne de caractères *exacte* est possible actuellement.
 

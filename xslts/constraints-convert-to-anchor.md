@@ -8,7 +8,12 @@ Convertit une licence, condition d'utilisation ou condition d'usage formulée en
 Aucun.
 
 
-## Limitations
+## Prérequis
+
+Aucun.
+
+
+## Limites
 
 La détection d'une balise se base sur une comparaison du texte libre d'origine avec un dictionnaire.
 Les entrées du dictionnaire sont volontairement limitées de manière à éviter les faux positifs.

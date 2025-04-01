@@ -8,6 +8,11 @@ Prépare un catalogue à l'utilisation d'ISOmorphe.
 Aucun.
 
 
+## Prérequis
+
+Aucun.
+
+
 ## Motivation
 
 Les mises à jour de fiches Geonetwork peuvent provoquer des modifications de la structure des fiches XML internes à Geonetwork.
@@ -17,7 +22,7 @@ Ce XSLT a pour objectif de :
 - minimiser les modifications internes, en supprimant les namespaces XML inutilisés, pour éviter de générer des modifications liées à ces namespaces inutiles.
 
 
-## Limitations
+## Limites
 
 Cette transformation va modifier l'ensemble des fiches sélectionnées.
 
