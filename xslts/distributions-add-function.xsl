@@ -11,8 +11,8 @@
 
   <xsl:output encoding="UTF-8"/>
 
-  <xsl:param name="match-string" required="yes"/>
   <xsl:param name="match-field" select="'name'" required="yes"/>
+  <xsl:param name="match-string" required="yes"/>
   <xsl:param name="function-type" select="'download'" required="yes"/>
   <xsl:param name="override-existing" select="'no'" required="yes"/>
 
