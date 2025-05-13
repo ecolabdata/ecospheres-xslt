@@ -40,6 +40,10 @@
                   <xsl:when test="$match-field = 'name'">
                     <xsl:value-of select="gmd:name/gco:CharacterString" disable-output-escaping="yes"/>
                   </xsl:when>
+                  <xsl:when test="$match-field = 'protocol'">
+                    <!-- either Anchor or CharacterString -->
+                    <xsl:value-of select="gmd:protocol/*" disable-output-escaping="yes"/>
+                  </xsl:when>
                   <xsl:when test="$match-field = 'url'">
                     <xsl:value-of select="gmd:linkage/gmd:URL" disable-output-escaping="yes"/>
                   </xsl:when>
