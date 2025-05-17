@@ -15,7 +15,9 @@ Aucun.
 
 ## Motivation
 
-La spécification indique qu'un intervalle `gml:TimePeriod` doit contenir une borne de début *et* une borne de fin.
+La [spécification GML](https://portal.ogc.org/files/?artifact_id=20509) définit que `gml:TimePeriod` doit contenir une borne de début *et* une borne de fin (section 14.2.2.5).
+
+La borne manquante est ajoutée avec la valeur `unknown`, qui "indique qu'aucune valeur spécifique pour la position temporelle n'est fournie" (section 14.2.2.7).
 
 
 ## Exemples
@@ -49,4 +51,6 @@ Lorsque `gml:TimePeriod` ne contient pas de borne de fin :
 
 ## Références
 
-TODO
+https://github.com/ecolabdata/ecospheres-xslt/issues/31
+
+[OpenGIS Geography Markup Language (GML) Encoding Standard](https://portal.ogc.org/files/?artifact_id=20509), depuis https://www.ogc.org/standards/gml/
