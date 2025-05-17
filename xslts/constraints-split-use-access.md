@@ -84,6 +84,61 @@ devient :
 </gmd:resourceConstraints>
 ```
 
+
+## Messages
+
+Les messages suivants peuvent être affichés lors qu'un cas ambigu (mélangeant contraintes d'accès et d'utilisation) est traité : 
+
+> 'otherConstraints' -> 'accessConstraints', car 'Anchor'="LimitationsOnPublicAccess".
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` dont le `gmd:Anchor` fait référence au vocabulaire INSPIRE [LimitationsOnPublicAccess](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/) ;
+- Contient un `gmd:useConstraints` ;
+
+Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'accès, et réaffecté à un `gmd:MD_LegalConstraints` contenant un `gmd:accessConstraints`.
+
+
+> 'otherConstraints' -> 'accessConstraints', car présence de 'useLimitation'.
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` ;
+- Contient un `gmd:accessConstraints` et un `gmd:useConstraints` dont les attributs `codeListValue` ne permettent pas de rattacher sans ambiguité le `gmd:otherConstraints` ;
+- Contient un ou plusieurs éléments `gmd:useLimitation` ;
+
+Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'accès, et réaffecté à un `gmd:MD_LegalConstraints` contenant un `gmd:accessConstraints`.
+
+Cette interprétation repose uniquement sur l'observation de cas existants.
+Il est donc conseillé de vérifier ces cas.
+
+
+> 'otherConstraints' -> 'useConstraints', mais souvent problématique.
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` ;
+- Contient un `gmd:accessConstraints` dont l'attribut `codeListValue` est différent de "otherRestrictions" ;
+- Contient un `gmd:useConstraints` dont l'attribut est égal à "otherRestrictions" ;
+
+Alors l'élément `gmd:otherConstraints` est considéré comme une condition d'utilisation et reste affecté au `gmd:MD_LegalConstraints` contenant le `gmd:useConstraints`.
+
+Cette interprétation est conforme à la spécification mais souvent incorrecte en pratique.
+Il est donc conseillé de vérifier ces cas.
+
+
+> 'otherConstraints' ambigu.
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` ;
+- Contient un `gmd:accessConstraints` ;
+- Contient un `gmd:useConstraints` ;
+- Reste ambigu malgré la prise en charge des autres cas ci-dessus ;
+
+Alors l'élément `gmd:otherConstraints` est considéré comme ne pouvant pas être traité automatiquement.
+
+De tels cas doivent donc être corrigés manuellement.
+
+Cependant, s'il vous semble qu'un tel cas pourrait être mieux pris en charge, merci de nous le signaler à ecospheres@developpement-durable.gouv.fr.
+
+
 ## Références
 
 https://github.com/ecolabdata/ecospheres/wiki/Recommandations-ISO-DCAT#s%C3%A9parer-la-licence-des-conditions-dacc%C3%A8s
