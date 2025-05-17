@@ -20,7 +20,7 @@ La spécification indique qu'un intervalle `gml:TimePeriod` doit contenir une bo
 
 ## Exemples
 
-Lorsque `gml:TimePeriod` ne contient pas de borne de début : 
+Lorsque `gml:TimePeriod` ne contient pas de borne de début :
 
     <gmd:EX_TemporalExtent>
       <gmd:extent>
@@ -33,7 +33,7 @@ Lorsque `gml:TimePeriod` ne contient pas de borne de début :
       </gmd:extent>
     </gmd:EX_TemporalExtent>
 
-Lorsque `gml:TimePeriod` ne contient pas de borne de fin : 
+Lorsque `gml:TimePeriod` ne contient pas de borne de fin :
 
     <gmd:EX_TemporalExtent>
       <gmd:extent>
