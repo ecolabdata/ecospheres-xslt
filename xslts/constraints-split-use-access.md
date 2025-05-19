@@ -136,8 +136,7 @@ Si un élément `gmd:MD_LegalConstraints` :
 Alors l'élément `gmd:otherConstraints` est considéré comme ne pouvant pas être traité automatiquement.
 
 De tels cas doivent donc être corrigés manuellement.
-
-Cependant, s'il vous semble qu'un tel cas pourrait être mieux pris en charge, merci de nous le signaler à ecospheres@developpement-durable.gouv.fr.
+Cependant, s'il vous semble qu'un cas pourrait être mieux pris en charge, merci de nous le signaler à ecospheres@developpement-durable.gouv.fr.
 
 
 ## Références
