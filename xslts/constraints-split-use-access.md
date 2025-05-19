@@ -23,9 +23,9 @@ Un tel cas ne respectant pas le standard INSPIRE, il est difficile motiver une �
 ## Limites
 
 La transformation prend en charge uniquement les cas pour lesquels la séparation des conditions d'utilisation et d'accès :
-- améliore la prise en charge des métadonnées par data.gouv.fr ;
-- n'est pas ambigue, ou peut être désambiguïsée de manière relativement fiable ;
-- n'affecte pas significativement l'interprétation de cette section dans le catalogue d'origine.
+- Améliore la prise en charge des métadonnées par data.gouv.fr ;
+- N'est pas ambigue, ou peut être désambiguïsée de manière relativement fiable ;
+- N'affecte pas significativement l'interprétation de cette section dans le catalogue d'origine.
 
 Les autres cas pourront faire l'objet de futures améliorations, ou devront être traités manuellement.
 
@@ -88,6 +88,7 @@ devient :
 ## Messages
 
 Les messages suivants peuvent être affichés lors qu'un cas ambigu (mélangeant contraintes d'accès et d'utilisation) est traité : 
+
 
 > 'otherConstraints' -> 'accessConstraints', car 'Anchor'="LimitationsOnPublicAccess".
 
