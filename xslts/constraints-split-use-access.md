@@ -93,7 +93,7 @@ Les messages suivants peuvent être affichés lors qu'un cas ambigu (mélangeant
 
 Si un élément `gmd:MD_LegalConstraints` :
 - Contient un `gmd:otherConstraints` dont le `gmd:Anchor` fait référence au vocabulaire INSPIRE [LimitationsOnPublicAccess](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/) ;
-- Contient un `gmd:useConstraints` ;
+- Contient un `gmd:useConstraints`.
 
 Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'accès, et réaffecté à un `gmd:MD_LegalConstraints` contenant un `gmd:accessConstraints`.
 
@@ -103,7 +103,7 @@ Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'
 Si un élément `gmd:MD_LegalConstraints` :
 - Contient un `gmd:otherConstraints` ;
 - Contient un `gmd:accessConstraints` et un `gmd:useConstraints` dont les attributs `codeListValue` ne permettent pas de rattacher sans ambiguité le `gmd:otherConstraints` ;
-- Contient un ou plusieurs éléments `gmd:useLimitation` ;
+- Contient un ou plusieurs éléments `gmd:useLimitation`.
 
 Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'accès, et réaffecté à un `gmd:MD_LegalConstraints` contenant un `gmd:accessConstraints`.
 
@@ -116,7 +116,7 @@ Il est donc conseillé de vérifier ces cas.
 Si un élément `gmd:MD_LegalConstraints` :
 - Contient un `gmd:otherConstraints` ;
 - Contient un `gmd:accessConstraints` dont l'attribut `codeListValue` est différent de "otherRestrictions" ;
-- Contient un `gmd:useConstraints` dont l'attribut est égal à "otherRestrictions" ;
+- Contient un `gmd:useConstraints` dont l'attribut est égal à "otherRestrictions".
 
 Alors l'élément `gmd:otherConstraints` est considéré comme une condition d'utilisation et reste affecté au `gmd:MD_LegalConstraints` contenant le `gmd:useConstraints`.
 
@@ -130,7 +130,7 @@ Si un élément `gmd:MD_LegalConstraints` :
 - Contient un `gmd:otherConstraints` ;
 - Contient un `gmd:accessConstraints` ;
 - Contient un `gmd:useConstraints` ;
-- Reste ambigu malgré la prise en charge des autres cas ci-dessus ;
+- Reste ambigu malgré la prise en charge des autres cas ci-dessus.
 
 Alors l'élément `gmd:otherConstraints` est considéré comme ne pouvant pas être traité automatiquement.
 
