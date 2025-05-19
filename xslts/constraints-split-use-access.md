@@ -23,9 +23,9 @@ Un tel cas ne respectant pas le standard INSPIRE, il est difficile motiver une �
 ## Limites
 
 La transformation prend en charge uniquement les cas pour lesquels la séparation des conditions d'utilisation et d'accès :
-- améliore la prise en charge des métadonnées par data.gouv.fr ;
-- n'est pas ambigue, ou peut être désambiguïsée de manière relativement fiable ;
-- n'affecte pas significativement l'interprétation de cette section dans le catalogue d'origine.
+- Améliore la prise en charge des métadonnées par data.gouv.fr ;
+- N'est pas ambigue, ou peut être désambiguïsée de manière relativement fiable ;
+- N'affecte pas significativement l'interprétation de cette section dans le catalogue d'origine.
 
 Les autres cas pourront faire l'objet de futures améliorations, ou devront être traités manuellement.
 
@@ -83,6 +83,61 @@ devient :
   </gmd:MD_LegalConstraints>
 </gmd:resourceConstraints>
 ```
+
+
+## Messages
+
+Les messages suivants peuvent être affichés lors qu'un cas ambigu (mélangeant contraintes d'accès et d'utilisation) est traité : 
+
+
+> 'otherConstraints' -> 'accessConstraints', car 'Anchor'="LimitationsOnPublicAccess".
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` dont le `gmd:Anchor` fait référence au vocabulaire INSPIRE [LimitationsOnPublicAccess](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/) ;
+- Contient un `gmd:useConstraints`.
+
+Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'accès, et réaffecté à un `gmd:MD_LegalConstraints` contenant un `gmd:accessConstraints`.
+
+
+> 'otherConstraints' -> 'accessConstraints', car présence de 'useLimitation'.
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` ;
+- Contient un `gmd:accessConstraints` et un `gmd:useConstraints` dont les attributs `codeListValue` ne permettent pas de rattacher sans ambiguité le `gmd:otherConstraints` ;
+- Contient un ou plusieurs éléments `gmd:useLimitation`.
+
+Alors l'élément `gmd:otherConstraints` est considéré comme une contrainte d'accès, et réaffecté à un `gmd:MD_LegalConstraints` contenant un `gmd:accessConstraints`.
+
+Cette interprétation repose uniquement sur l'observation de cas existants.
+Il est donc conseillé de vérifier ces cas.
+
+
+> 'otherConstraints' -> 'useConstraints', mais souvent problématique.
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` ;
+- Contient un `gmd:accessConstraints` dont l'attribut `codeListValue` est différent de "otherRestrictions" ;
+- Contient un `gmd:useConstraints` dont l'attribut est égal à "otherRestrictions".
+
+Alors l'élément `gmd:otherConstraints` est considéré comme une condition d'utilisation et reste affecté au `gmd:MD_LegalConstraints` contenant le `gmd:useConstraints`.
+
+Cette interprétation est conforme à la spécification mais souvent incorrecte en pratique.
+Il est donc conseillé de vérifier ces cas.
+
+
+> 'otherConstraints' ambigu.
+
+Si un élément `gmd:MD_LegalConstraints` :
+- Contient un `gmd:otherConstraints` ;
+- Contient un `gmd:accessConstraints` ;
+- Contient un `gmd:useConstraints` ;
+- Reste ambigu malgré la prise en charge des autres cas ci-dessus.
+
+Alors l'élément `gmd:otherConstraints` est considéré comme ne pouvant pas être traité automatiquement.
+
+De tels cas doivent donc être corrigés manuellement.
+Cependant, s'il vous semble qu'un cas pourrait être mieux pris en charge, merci de nous le signaler à ecospheres@developpement-durable.gouv.fr.
+
 
 ## Références
 
