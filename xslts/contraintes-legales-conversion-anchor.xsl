@@ -32,23 +32,47 @@
         <item>
           <key>etalab-2.0</key>
           <label>Licence Ouverte / Open Licence version 2.0</label>
-          <alt>Licence Ouverte (Etalab)</alt>
+          <alt>Licence Ouverte / Open License version 2.0</alt>
           <alt>Licence Ouverte / Open Licence v2.0</alt>
+          <alt>Licence Ouverte / Open License v2.0</alt>
           <alt>Licence Ouverte / Open Licence v2</alt>
+          <alt>Licence Ouverte / Open License v2</alt>
           <alt>Licence Ouverte / Open Licence version 2.0</alt>
-          <alt>Licence Ouverte / Open Licence version 2.0</alt>
+          <alt>Licence Ouverte / Open License version 2.0</alt>
+          <alt>Licence Ouverte / Open Licence version 2</alt>
+          <alt>Licence Ouverte / Open License version 2</alt>
           <alt>Licence Ouverte v2.0 (Etalab)</alt>
+          <alt>License Ouverte v2.0 (Etalab)</alt>
           <alt>Licence Ouverte v2.0</alt>
+          <alt>License Ouverte v2.0</alt>
           <alt>Licence Ouverte v2</alt>
+          <alt>License Ouverte v2</alt>
           <alt>Licence Ouverte version 2.0</alt>
-          <alt>License Etalab v2.0</alt>
-          <alt>License Etalab v2</alt>
-          <alt>License Etalab version 2.0</alt>
-          <alt>License Etalab</alt>
+          <alt>License Ouverte version 2.0</alt>
+          <alt>Licence Ouverte version 2</alt>
+          <alt>License Ouverte version 2</alt>
+          <alt>Licence Ouverte (Etalab)</alt>
+          <alt>License Ouverte (Etalab)</alt>
+          <alt>Licence Ouverte</alt>
           <alt>License Ouverte</alt>
+          <alt>Licence Etalab v2.0</alt>
+          <alt>License Etalab v2.0</alt>
+          <alt>Licence Etalab v2</alt>
+          <alt>License Etalab v2</alt>
+          <alt>Licence Etalab version 2.0</alt>
+          <alt>License Etalab version 2.0</alt>
+          <alt>Licence Etalab version 2</alt>
+          <alt>License Etalab version 2</alt>
+          <alt>Licence Etalab</alt>
+          <alt>License Etalab</alt>
           <alt>Open Licence v2.0</alt>
+          <alt>Open License v2.0</alt>
           <alt>Open Licence v2</alt>
+          <alt>Open License v2</alt>
           <alt>Open Licence version 2.0</alt>
+          <alt>Open License version 2.0</alt>
+          <alt>Open Licence version 2</alt>
+          <alt>Open License version 2</alt>
           <alt>https://github.com/DISIC/politique-de-contribution-open-source/blob/master/LICENSE.pdf</alt>
           <alt>https://github.com/etalab/Licence-Ouverte/blob/master/LO.md</alt>
           <alt>https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE</alt>
