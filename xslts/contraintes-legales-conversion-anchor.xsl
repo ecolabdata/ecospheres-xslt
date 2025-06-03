@@ -22,7 +22,7 @@
   <!-- Licenses -->
   <xsl:variable name="licenses">
     <xsl:call-template name="build-registry-lookup">
-      <xsl:with-param name="base-uri" select="'https://spdx.org/licenses'"/>
+      <xsl:with-param name="base-uri" select="'http://spdx.org/licenses'"/>
       <xsl:with-param name="entries">
         <!--
             Partly generated from:
