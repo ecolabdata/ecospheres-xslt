@@ -73,13 +73,14 @@
           <alt>Open License version 2.0</alt>
           <alt>Open Licence version 2</alt>
           <alt>Open License version 2</alt>
-          <alt>https://github.com/DISIC/politique-de-contribution-open-source/blob/master/LICENSE.pdf</alt>
-          <alt>https://github.com/etalab/Licence-Ouverte/blob/master/LO.md</alt>
-          <alt>https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE</alt>
-          <alt>https://spdx.org/licenses/etalab-2.0.html</alt>
-          <alt>https://spdx.org/licenses/etalab-2.0</alt>
-          <alt>https://www.etalab.gouv.fr/licence-ouverte-open-licence</alt>
-          <alt>https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf</alt>
+          <alt>github.com/DISIC/politique-de-contribution-open-source/blob/master/LICENSE.pdf</alt>
+          <alt>github.com/etalab/Licence-Ouverte/blob/master/LO.md</alt>
+          <alt>raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE</alt>
+          <alt>spdx.org/licenses/etalab-2.0.html</alt>
+          <alt>spdx.org/licenses/etalab-2.0</alt>
+          <alt>www.etalab.gouv.fr/licence-ouverte-open-licence</alt>
+          <alt>www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf</alt>
+          <alt>www.data.gouv.fr/Licence-Ouverte-Open-Licence</alt>
         </item>
         <item>
           <key>ODbL-1.0</key>
@@ -96,12 +97,12 @@
           <alt>Open Database License (ODbL) version 1.0</alt>
           <alt>Open Database License (ODbL)</alt>
           <alt>Open Database License</alt>
-          <alt>http://opendatacommons.org/licenses/odbl/summary/</alt>
-          <alt>http://www.opendatacommons.org/licenses/odbl/1.0/</alt>
-          <alt>https://opendatacommons.org/licenses/odbl/1-0/</alt>
-          <alt>https://opendefinition.org/licenses/odc-odbl</alt>
-          <alt>https://spdx.org/licenses/ODbL-1.0.html</alt>
-          <alt>https://spdx.org/licenses/ODbL-1.0</alt>
+          <alt>opendatacommons.org/licenses/odbl/summary/</alt>
+          <alt>www.opendatacommons.org/licenses/odbl/1.0/</alt>
+          <alt>opendatacommons.org/licenses/odbl/1-0/</alt>
+          <alt>opendefinition.org/licenses/odc-odbl</alt>
+          <alt>spdx.org/licenses/ODbL-1.0.html</alt>
+          <alt>spdx.org/licenses/ODbL-1.0</alt>
         </item>
       </xsl:with-param>
     </xsl:call-template>
@@ -296,7 +297,7 @@
         <xsl:copy-of select="$match-full"/>
       </xsl:when>
       <xsl:otherwise>
-      <!-- all but url -->
+        <!-- all but url -->
         <xsl:variable name="label-nourl" select="normalize-space(substring-before($normalized, 'http'))"/>
         <xsl:variable name="match-nourl">
           <xsl:copy-of select="exsl:node-set($lookup-table)/item[alt=$label-nourl]/match/*"/>
@@ -307,7 +308,7 @@
           </xsl:when>
           <xsl:otherwise>
             <!-- url -->
-            <xsl:variable name="label-url" select="concat('http', substring-after($normalized, 'http'))"/>
+            <xsl:variable name="label-url" select="substring-after($normalized, '://')"/>
             <xsl:variable name="match-url">
               <xsl:copy-of select="exsl:node-set($lookup-table)/item[alt=$label-url]/match/*"/>
             </xsl:variable>
