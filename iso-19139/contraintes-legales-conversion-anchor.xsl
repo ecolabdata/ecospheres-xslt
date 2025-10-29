@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/constraints-convert-to-anchor.md
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/iso-19139/contraintes-legales-conversion-anchor.md
 -->
 
 <xsl:stylesheet version="1.0"

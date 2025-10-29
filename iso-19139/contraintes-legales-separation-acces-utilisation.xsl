@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/constraints-split-use-access.md
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/iso-19139/contraintes-legales-separation-acces-utilisation.md
 -->
 
 <xsl:stylesheet version="1.0"
