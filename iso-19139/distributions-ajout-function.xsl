@@ -9,6 +9,8 @@
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 exclude-result-prefixes="#all">
 
+  <xsl:include href="../helpers.xsl"/>
+
   <xsl:output encoding="UTF-8"/>
 
   <xsl:param name="match-field" required="yes"/>
@@ -85,37 +87,6 @@
     <xsl:copy>
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
-  </xsl:template>
-
-
-  <!--
-      Helpers
-  -->
-
-  <xsl:template name="normalize-string">
-    <xsl:param name="string"/>
-
-    <xsl:variable name="accents_up">ÀÂÇÉÈÊËÎÏÔÙÛÜ</xsl:variable>
-    <xsl:variable name="accents_lo">àâçéèêëîïôùûü</xsl:variable>
-    <xsl:variable name="accents_tr">aaceeeeiiouuu</xsl:variable>
-
-    <xsl:variable name="tr_from">’</xsl:variable>
-    <xsl:variable name="tr_to"  >'</xsl:variable>
-
-    <xsl:variable name="lowercase">
-      <xsl:value-of select="translate($string,
-                            concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ', $accents_up),
-                            concat('abcdefghijklmnopqrstuvwxyz', $accents_lo))"/>
-    </xsl:variable>
-
-    <xsl:variable name="folded">
-      <xsl:value-of select="translate($lowercase,
-                            concat($accents_lo, $tr_from),
-                            concat($accents_tr, $tr_to))"/>
-    </xsl:variable>
-
-    <!-- normalize-space at the end in case we fold to space -->
-    <xsl:value-of select="normalize-space($folded)"/>
   </xsl:template>
 
 </xsl:stylesheet>
