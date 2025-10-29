@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/xslts/temporal-coverage-fix-interval.md
+  Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/iso-19139/couverture-temporelle-correction-intervalle-incomplet.md
 -->
 
 <xsl:stylesheet version="1.0"
