@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+                 xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+                 xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+                 xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mdb/2.0 https://schemas.isotc211.org/19115/-3/mdb/2.0/mdb.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>sample-id</gco:CharacterString>
+      </mcc:code>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:distributionInfo>
+    <mrd:MD_Distribution>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>http://example.com/wfs?VERSION=2.0.0&amp;SERVICE=WFS&amp;REQUEST=GetCapabilities</gco:CharacterString>
+              </cit:linkage>
+              <cit:name>
+                <gco:CharacterString>WFS GetCapabilities request providing machine readable service metadata</gco:CharacterString>
+              </cit:name>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+</mdb:MD_Metadata>

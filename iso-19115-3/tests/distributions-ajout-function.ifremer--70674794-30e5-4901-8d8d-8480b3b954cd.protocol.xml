@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0" xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0" xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0" xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0" xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mdb/2.0 https://schemas.isotc211.org/19115/-3/mdb/2.0/mdb.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>70674794-30e5-4901-8d8d-8480b3b954cd</gco:CharacterString>
+      </mcc:code>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale>
+    <lan:PT_Locale id="FR">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre" />
+      </lan:language>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope>
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+      </mdb:resourceScope>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact>
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>Ifremer</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo>
+            <cit:CI_Contact>
+              <cit:address>
+                <cit:CI_Address>
+                  <cit:electronicMailAddress>
+                    <gco:CharacterString>gmcarto@ifremer.fr</gco:CharacterString>
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+            </cit:CI_Contact>
+          </cit:contactInfo>
+          <cit:individual>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Geo-Ocean</gco:CharacterString>
+              </cit:name>
+              <cit:partyIdentifier>
+                <mcc:MD_Identifier>
+                  <mcc:code gco:nilReason="missing">
+                    <gco:CharacterString />
+                  </mcc:code>
+                  <mcc:codeSpace>
+                    <gco:CharacterString>ORCID</gco:CharacterString>
+                  </mcc:codeSpace>
+                </mcc:MD_Identifier>
+              </cit:partyIdentifier>
+              <cit:positionName xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>SIG</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">SIG</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:positionName>
+            </cit:CI_Individual>
+          </cit:individual>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-03-13T15:02:05.017307Z</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-08-29T10:04:16.348575Z</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard>
+    <cit:CI_Citation>
+      <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+        <gco:CharacterString>ISO 19115-3 - SEXTANT</gco:CharacterString>
+        <lan:PT_FreeText>
+          <lan:textGroup>
+            <lan:LocalisedCharacterString locale="#FR">ISO 19115-3 - SEXTANT</lan:LocalisedCharacterString>
+          </lan:textGroup>
+        </lan:PT_FreeText>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>1.0</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:otherLocale>
+    <lan:PT_Locale id="EN">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+      </lan:language>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:otherLocale>
+  <mdb:metadataLinkage>
+    <cit:CI_OnlineResource>
+      <cit:linkage xsi:type="lan:PT_FreeText_PropertyType">
+        <gco:CharacterString>https://sextant.ifremer.fr/geonetwork/srv/api/records/70674794-30e5-4901-8d8d-8480b3b954cd</gco:CharacterString>
+        <lan:PT_FreeText>
+          <lan:textGroup>
+            <lan:LocalisedCharacterString locale="#FR">https://sextant.ifremer.fr/geonetwork/srv/api/records/70674794-30e5-4901-8d8d-8480b3b954cd</lan:LocalisedCharacterString>
+          </lan:textGroup>
+        </lan:PT_FreeText>
+      </cit:linkage>
+      <cit:function>
+        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata" />
+      </cit:function>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:spatialRepresentationInfo />
+  <mdb:spatialRepresentationInfo>
+    <msr:MD_GridSpatialRepresentation>
+      <msr:numberOfDimensions>
+        <gco:Integer>0</gco:Integer>
+      </msr:numberOfDimensions>
+      <msr:cellGeometry>
+        <msr:MD_CellGeometryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CellGeometryCode" codeListValue="area" />
+      </msr:cellGeometry>
+      <msr:transformationParameterAvailability gco:nilReason="unknown" />
+    </msr:MD_GridSpatialRepresentation>
+  </mdb:spatialRepresentationInfo>
+  <mdb:referenceSystemInfo>
+    <mrs:MD_ReferenceSystem>
+      <mrs:referenceSystemIdentifier>
+        <mcc:MD_Identifier>
+          <mcc:code>
+            <gcx:Anchor xlink:title="WGS 84 / World Mercator (EPSG:3395)" xlink:href="http://www.opengis.net/def/crs/EPSG/0/3395">EPSG:3395 Parallèle standard 14°N</gcx:Anchor>
+          </mcc:code>
+          <mcc:codeSpace>
+            <gco:CharacterString>EPSG</gco:CharacterString>
+          </mcc:codeSpace>
+          <mcc:version>
+            <gco:CharacterString>7.4</gco:CharacterString>
+          </mcc:version>
+        </mcc:MD_Identifier>
+      </mrs:referenceSystemIdentifier>
+    </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
+  <mdb:identificationInfo>
+    <mri:MD_DataIdentification>
+      <mri:citation>
+        <cit:CI_Citation>
+          <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>Bathymétrie - zone de Clarion-Clipperton (campagne EDEN, 2024), résolution 100 m</gco:CharacterString>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">Bathymétrie - zone de Clarion-Clipperton (campagne EDEN, 2024), résolution 100 m</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">Bathymetry - Clarion Clipperton Zone (EDEN, 2024), resolution 100 m</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </cit:title>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2025-03-10</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2025-03-10</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:identifier>
+            <mcc:MD_Identifier>
+              <mcc:code>
+                <gco:CharacterString>https://sextant.ifremer.fr/record/70674794-30e5-4901-8d8d-8480b3b954cd</gco:CharacterString>
+              </mcc:code>
+            </mcc:MD_Identifier>
+          </cit:identifier>
+        </cit:CI_Citation>
+      </mri:citation>
+      <mri:abstract xsi:type="lan:PT_FreeText_PropertyType">
+        <gco:CharacterString>Bathymétrie de la campagne EDEN depuis la sortie de la ZEE mexicaine jusqu'à la zone de fracture de Clarion Clipperton, passage sur contrat belge et retour dans la ZEE, au pas de 100 mètres. Ce jeu de données est un Modèle Numérique de Terrain, issu de l'acquisition acoustique du sondeur multifaisceau EM122 (12kHz) du N/O L'Atalante.
+Référence verticale : Niveau des plus basses mers
+Rapport de traitement : Pierre Delphine, Besson Florian (2025). Campagne EDEN. Actions ANTIPOD. Ref. REM/GO/ANTIPOD. Rapport intermédiaire. Ifremer. https://archimer.ifremer.fr/doc/00935/104706/
+Description de la campagne : DESSANDIER Pierre-Antoine (2024) EDEN cruise, RV L'Atalante, https://doi.org/10.17600/18003593
+Logiciel de traitement : Poncelet Cyrille, Billant Gael, Corre Marie-Paule, Saunier Anthony (2025). Globe (GLobal Oceanographic Bathymetry Explorer) Software. SEANOE. https://doi.org/10.17882/70460</gco:CharacterString>
+        <lan:PT_FreeText>
+          <lan:textGroup>
+            <lan:LocalisedCharacterString locale="#FR">Bathymétrie de la campagne EDEN depuis la sortie de la ZEE mexicaine jusqu'à la zone de fracture de Clarion Clipperton, passage sur contrat belge et retour dans la ZEE, au pas de 100 mètres. Ce jeu de données est un Modèle Numérique de Terrain, issu de l'acquisition acoustique du sondeur multifaisceau EM122 (12kHz) du N/O L'Atalante.
+Référence verticale : Niveau des plus basses mers
+Rapport de traitement : Pierre Delphine, Besson Florian (2025). Campagne EDEN. Actions ANTIPOD. Ref. REM/GO/ANTIPOD. Rapport intermédiaire. Ifremer. https://archimer.ifremer.fr/doc/00935/104706/
+Description de la campagne : DESSANDIER Pierre-Antoine (2024) EDEN cruise, RV L'Atalante, https://doi.org/10.17600/18003593
+Logiciel de traitement : Poncelet Cyrille, Billant Gael, Corre Marie-Paule, Saunier Anthony (2025). Globe (GLobal Oceanographic Bathymetry Explorer) Software. SEANOE. https://doi.org/10.17882/70460</lan:LocalisedCharacterString>
+          </lan:textGroup>
+        </lan:PT_FreeText>
+      </mri:abstract>
+      <mri:credit xsi:type="lan:PT_FreeText_PropertyType">
+        <gco:CharacterString>Ifremer</gco:CharacterString>
+        <lan:PT_FreeText>
+          <lan:textGroup>
+            <lan:LocalisedCharacterString locale="#FR">Ifremer</lan:LocalisedCharacterString>
+          </lan:textGroup>
+        </lan:PT_FreeText>
+      </mri:credit>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="author" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>Ifremer</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>gmcarto@ifremer.fr</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:individual>
+                <cit:CI_Individual>
+                  <cit:name>
+                    <gco:CharacterString>Ifremer Geo-Ocean</gco:CharacterString>
+                  </cit:name>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>ORCID</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                </cit:CI_Individual>
+              </cit:individual>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>Ifremer</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>sismer@ifremer.fr</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:individual>
+                <cit:CI_Individual>
+                  <cit:name>
+                    <gco:CharacterString>Ifremer Sismer</gco:CharacterString>
+                  </cit:name>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>ORCID</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                </cit:CI_Individual>
+              </cit:individual>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:spatialRepresentationType>
+        <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="grid" />
+      </mri:spatialRepresentationType>
+      <mri:spatialResolution>
+        <mri:MD_Resolution>
+          <mri:equivalentScale>
+            <mri:MD_RepresentativeFraction>
+              <mri:denominator>
+                <gco:Integer>100000</gco:Integer>
+              </mri:denominator>
+            </mri:MD_RepresentativeFraction>
+          </mri:equivalentScale>
+        </mri:MD_Resolution>
+      </mri:spatialResolution>
+      <mri:spatialResolution>
+        <mri:MD_Resolution>
+          <mri:distance>
+            <gco:Distance uom="meter">50</gco:Distance>
+          </mri:distance>
+        </mri:MD_Resolution>
+      </mri:spatialResolution>
+      <mri:topicCategory>
+        <mri:MD_TopicCategoryCode>oceans</mri:MD_TopicCategoryCode>
+      </mri:topicCategory>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:geographicElement>
+            <gex:EX_GeographicBoundingBox>
+              <gex:westBoundLongitude>
+                <gco:Decimal>-131.0803</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>-117.1883</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>13.8435</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>17.6863</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:temporalElement>
+            <gex:EX_TemporalExtent>
+              <gex:extent>
+                <gml:TimePeriod gml:id="d46710359e636a1051934">
+                  <gml:beginPosition>2024-11-20</gml:beginPosition>
+                  <gml:endPosition>2024-12-29</gml:endPosition>
+                </gml:TimePeriod>
+              </gex:extent>
+            </gex:EX_TemporalExtent>
+          </gex:temporalElement>
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:graphicOverview>
+        <mcc:MD_BrowseGraphic>
+          <mcc:fileName>
+            <gco:CharacterString>https://sextant.ifremer.fr/geonetwork/srv/api/records/70674794-30e5-4901-8d8d-8480b3b954cd/attachments/2025-03-11%2008_44_37-EDEN100m.png</gco:CharacterString>
+          </mcc:fileName>
+        </mcc:MD_BrowseGraphic>
+      </mri:graphicOverview>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+            <gcx:Anchor xlink:href="https://vocab.ifremer.fr/scheme/SXT/sextant-theme/b0043d17-b853-40f3-8a0f-4393aa165115">/Milieu physique/Bathymétrie</gcx:Anchor>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">/Milieu physique/Bathymétrie</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">/Physical Environment/Bathymetry</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                <gcx:Anchor xlink:href="https://vocab.ifremer.fr/scheme/SXT/sextant-theme">Thèmes Sextant</gcx:Anchor>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">Thèmes Sextant</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2024-09-27</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2024-09-27</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://sextant.ifremer.fr/geonetwork/srv/api/registries/vocabularies/local.theme.sextant-theme">geonetwork.thesaurus.local.theme.sextant-theme</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+            <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/el">Altitude</gcx:Anchor>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">Altitude</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">Elevation</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme">GEMET - INSPIRE themes, version 1.0</gcx:Anchor>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">GEMET - INSPIRE themes, version 1.0</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2018-01-01</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:DateTime>2018-07-27T14:39:48</gco:DateTime>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://sextant.ifremer.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+            <gcx:Anchor xlink:href="http://www.eionet.europa.eu/gemet/concept/7497">fond marin</gcx:Anchor>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">fond marin</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">sea bed</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mri:keyword>
+          <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+            <gcx:Anchor xlink:href="http://www.eionet.europa.eu/gemet/concept/3654">géomorphologie</gcx:Anchor>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">géomorphologie</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">geomorphology</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                <gcx:Anchor xlink:href="http://geonetwork-opensource.org/gemet">GEMET - Concepts, version 2.4</gcx:Anchor>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">GEMET - Concepts, version 2.4</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2010-01-01</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2010-01-13</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://sextant.ifremer.fr/geonetwork/srv/api/registries/vocabularies/external.theme.gemet">geonetwork.thesaurus.external.theme.gemet</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>Bathymétrie</gco:CharacterString>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">Bathymétrie</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">Bathymetry</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="discipline" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:resourceConstraints>
+        <mco:MD_LegalConstraints>
+          <mco:useLimitation xsi:type="lan:PT_FreeText_PropertyType">
+            <gcx:Anchor xlink:href="https://creativecommons.org/licenses/by/4.0/">CC-BY (Creative Commons - Attribution)</gcx:Anchor>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">CC-BY (Creative Commons - Attribution)</lan:LocalisedCharacterString>
+              </lan:textGroup>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#EN">CC-BY (Creative Commons - Attribution)</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mco:useLimitation>
+          <mco:accessConstraints>
+            <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" />
+          </mco:accessConstraints>
+          <mco:useConstraints>
+            <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" codeListValue="license" />
+          </mco:useConstraints>
+          <mco:otherConstraints xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>Pas de restriction d'accès public</gco:CharacterString>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">Pas de restriction d'accès public</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mco:otherConstraints>
+        </mco:MD_LegalConstraints>
+      </mri:resourceConstraints>
+      <mri:resourceConstraints>
+        <mco:MD_Constraints>
+          <mco:useLimitation xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>Ne pas utiliser pour la navigation</gco:CharacterString>
+            <lan:PT_FreeText>
+              <lan:textGroup>
+                <lan:LocalisedCharacterString locale="#FR">Ne pas utiliser pour la navigation</lan:LocalisedCharacterString>
+              </lan:textGroup>
+            </lan:PT_FreeText>
+          </mco:useLimitation>
+        </mco:MD_Constraints>
+      </mri:resourceConstraints>
+      <mri:defaultLocale>
+        <lan:PT_Locale>
+          <lan:language>
+            <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre" />
+          </lan:language>
+          <lan:characterEncoding>
+            <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+          </lan:characterEncoding>
+        </lan:PT_Locale>
+      </mri:defaultLocale>
+    </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:distributionInfo>
+    <mrd:MD_Distribution>
+      <mrd:distributionFormat>
+        <mrd:MD_Format>
+          <mrd:formatSpecificationCitation>
+            <cit:CI_Citation>
+              <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>GeoTIFF</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">GeoTIFF</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:title>
+              <cit:date gco:nilReason="unknown" />
+              <cit:edition gco:nilReason="unknown">
+                <gco:CharacterString>1.0</gco:CharacterString>
+              </cit:edition>
+            </cit:CI_Citation>
+          </mrd:formatSpecificationCitation>
+        </mrd:MD_Format>
+      </mrd:distributionFormat>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage gco:nilReason="withheld" />
+              <cit:protocol>
+                <gco:CharacterString>COPYFILE</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>EDEN_100m_BATHY.tif</gco:CharacterString>
+              </cit:name>
+              <cit:description xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>Eden - Bathymétrie 100m</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">Eden - Bathymétrie 100m</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#EN" />
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:description>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="download" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>https://sextant.ifremer.fr/services/wms/gm_bathy</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">https://sextant.ifremer.fr/services/wms/gm_bathy</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>OGC:WMS</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>EDEN_100m_BATHY</gco:CharacterString>
+              </cit:name>
+              <cit:description xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>EDEN : bathymétrie générale, résolution 100 m</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">EDEN : bathymétrie générale, résolution 100 m</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#EN">Visualiser (WMS)</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:description>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="browsing" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>PACIFIQUE/ClarionClipperton/SIG/05_BATHY/Eden/EDEN_100m_BATHY.tif</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">PACIFIQUE/ClarionClipperton/SIG/05_BATHY/Eden/EDEN_100m_BATHY.tif</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>NETWORK:LINK</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>EDEN_100m_BATHY.tif</gco:CharacterString>
+              </cit:name>
+              <cit:description xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>EDEN_100m_BATHY.tif</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">EDEN_100m_BATHY.tif</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#EN" />
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </cit:description>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+  <mdb:dataQualityInfo>
+    <mdq:DQ_DataQuality>
+      <mdq:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mdq:scope>
+      <mdq:report>
+        <mdq:DQ_DomainConsistency>
+          <mdq:result>
+            <mdq:DQ_ConformanceResult>
+              <mdq:specification>
+                <cit:CI_Citation>
+                  <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+                    <gco:CharacterString>RÈGLEMENT (UE) N o 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</gco:CharacterString>
+                    <lan:PT_FreeText>
+                      <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">RÈGLEMENT (UE) N o 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</lan:LocalisedCharacterString>
+                      </lan:textGroup>
+                    </lan:PT_FreeText>
+                  </cit:title>
+                  <cit:date>
+                    <cit:CI_Date>
+                      <cit:date>
+                        <gco:Date>2010-12-08</gco:Date>
+                      </cit:date>
+                      <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                      </cit:dateType>
+                    </cit:CI_Date>
+                  </cit:date>
+                </cit:CI_Citation>
+              </mdq:specification>
+              <mdq:explanation xsi:type="lan:PT_FreeText_PropertyType">
+                <gco:CharacterString>See the referenced specification</gco:CharacterString>
+                <lan:PT_FreeText>
+                  <lan:textGroup>
+                    <lan:LocalisedCharacterString locale="#FR">See the referenced specification</lan:LocalisedCharacterString>
+                  </lan:textGroup>
+                </lan:PT_FreeText>
+              </mdq:explanation>
+              <mdq:pass gco:nilReason="unknown" />
+            </mdq:DQ_ConformanceResult>
+          </mdq:result>
+        </mdq:DQ_DomainConsistency>
+      </mdq:report>
+    </mdq:DQ_DataQuality>
+  </mdb:dataQualityInfo>
+  <mdb:resourceLineage>
+    <mrl:LI_Lineage>
+      <mrl:statement xsi:type="lan:PT_FreeText_PropertyType">
+        <gco:CharacterString>Traitement des données acoustiques avec le logiciel GLOBE, version 2.5.12 :
+- Réduction de la marée marée prédite (FES2014)
+- Correction de biais (attitude, célérité) éventuels sur les zones de travaux uniquement
+- Filtrage automatique des sondes
+- Contrôle qualité manuel
+La liste des profils bathymétriques utilisés (format .xsf) :
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_040_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_041_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_042_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_043_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_044_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_045_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_046_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_047a_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_047b_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_048_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_049_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_050_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_051_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_052_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_053_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_054_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_055_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_001_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_002_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_003_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_004_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_005_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_006_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_007_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_008_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_009_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_010_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_011_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_012_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_012a_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_012b_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_013_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_014_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_015_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_016_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_017_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_018_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_019_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_020_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_021_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_021_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_022_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_023_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_024_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_025_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_026_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_027_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_028_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_029_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_030_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_031_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_032_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_033_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_034_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_035_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_036a_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_036b_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_037_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_038_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_039_filtri_tid_BS-020.xsf.nc.</gco:CharacterString>
+        <lan:PT_FreeText>
+          <lan:textGroup>
+            <lan:LocalisedCharacterString locale="#FR">Traitement des données acoustiques avec le logiciel GLOBE, version 2.5.12 :
+- Réduction de la marée marée prédite (FES2014)
+- Correction de biais (attitude, célérité) éventuels sur les zones de travaux uniquement
+- Filtrage automatique des sondes
+- Contrôle qualité manuel
+La liste des profils bathymétriques utilisés (format .xsf) :
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_040_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_041_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_042_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_043_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_044_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_045_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_046_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_047a_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_047b_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_048_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_049_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_050_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_051_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_052_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_053_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_054_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_055_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_001_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_002_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_003_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_004_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_005_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_006_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_007_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_008_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_009_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_010_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_011_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_012_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_012a_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_012b_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_013_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_014_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_015_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_016_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_017_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_018_filtri_cel_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_019_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_020_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_021_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_021_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_022_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_023_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_024_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_025_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_026_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_027_filtri_tid_cel_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_028_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_029_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_030_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_031_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_032_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_033_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_034_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_035_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_036a_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_036b_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_037_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_038_filtri_tid_BS-020.xsf.nc,
+D:\EDEN_MBES_processing\00_REJEU\05_BS\20250227\EDEN_EM122_039_filtri_tid_BS-020.xsf.nc.</lan:LocalisedCharacterString>
+          </lan:textGroup>
+        </lan:PT_FreeText>
+      </mrl:statement>
+      <mrl:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mrl:scope>
+    </mrl:LI_Lineage>
+  </mdb:resourceLineage>
+</mdb:MD_Metadata>
