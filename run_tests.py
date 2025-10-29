@@ -7,29 +7,29 @@ from pathlib import Path
 
 init()
 
-CWD = Path(__file__).parent
-FIXTURE_DIR = CWD / "fixtures"
-TEST_DIR = CWD / "tests"
-XSLT_DIR = CWD / "xslts"
+BASE_PATH = Path(__file__).parent
+FIXTURE_DIR = Path("fixtures")
+TEST_DIR = Path("tests")
 XSLT_FIXTURE_SEP = "."
 
 
 # Pytest entry point
 def pytest_generate_tests(metafunc):
-    argnames = ["xslt_name", "fixture_name", "test_stem", "test_suffix", "has_config"]
+    argnames = ["standard_name", "xslt_name", "fixture_name", "test_stem", "test_suffix", "has_config"]
     if not set(argnames) <= set(metafunc.fixturenames):
         raise RuntimeError("Cannot find test function")
     metafunc.parametrize(argnames, list_test_cases())
 
 
 # Pytest parametrized test function
-def test_transform(xslt_name, fixture_name, test_stem, test_suffix, has_config):
-    xslt_path = resolve(XSLT_DIR / f"{xslt_name}.xsl")
-    fixture_path = resolve(FIXTURE_DIR / f"{fixture_name}.xml")
-    expected_path = resolve(TEST_DIR / f"{test_stem}.{test_suffix}")
-    messages_path = resolve(TEST_DIR / f"{test_stem}.msg", silent=True)
+def test_transform(standard_name, xslt_name, fixture_name, test_stem, test_suffix, has_config):
+    standard_path = BASE_PATH/standard_name
+    xslt_path = resolve(standard_path/f"{xslt_name}.xsl")
+    fixture_path = resolve(standard_path/FIXTURE_DIR/f"{fixture_name}.xml")
+    expected_path = resolve(standard_path/TEST_DIR/f"{test_stem}.{test_suffix}")
+    messages_path = resolve(standard_path/TEST_DIR/f"{test_stem}.msg", silent=True)
     test_params = (
-        load_test_params(resolve(TEST_DIR / f"{test_stem}.conf")) if has_config else {}
+        load_test_params(resolve(standard_path/TEST_DIR/f"{test_stem}.conf")) if has_config else {}
     )
 
     transform = etree.XSLT(etree.parse(xslt_path))
@@ -52,24 +52,28 @@ def test_transform(xslt_name, fixture_name, test_stem, test_suffix, has_config):
 
 
 def list_test_cases():
-    for xslt_path in XSLT_DIR.glob("*.xsl"):
-        xslt_name = xslt_path.stem
-        for test_path in TEST_DIR.glob(f"{xslt_name}{XSLT_FIXTURE_SEP}*.*"):
-            test_suffix = test_path.suffix[1:]
-            if test_suffix not in ("xml", "err"):
-                continue
-            test_stem = test_path.stem
-            parts = test_stem.split(XSLT_FIXTURE_SEP)
-            fixture_name = parts[1]
-            has_config = len(parts) > 2
-            yield pytest.param(
-                xslt_name,
-                fixture_name,
-                test_stem,
-                test_suffix,
-                has_config,
-                id=test_stem,
-            )
+    standards = sorted(set([p.parent.stem for p in BASE_PATH.glob("*/*.xsl")]))
+    for standard_name in standards:
+        path = BASE_PATH/standard_name
+        for xslt_path in path.glob("*.xsl"):
+            xslt_name = xslt_path.stem
+            for test_path in (path/TEST_DIR).glob(f"{xslt_name}{XSLT_FIXTURE_SEP}*.*"):
+                test_suffix = test_path.suffix[1:]
+                if test_suffix not in ("xml", "err"):
+                    continue
+                test_stem = test_path.stem
+                parts = test_stem.split(XSLT_FIXTURE_SEP)
+                fixture_name = parts[1]
+                has_config = len(parts) > 2
+                yield pytest.param(
+                    standard_name,
+                    xslt_name,
+                    fixture_name,
+                    test_stem,
+                    test_suffix,
+                    has_config,
+                    id=f"{standard_name}:{test_stem}",
+                )
 
 
 def resolve(path, silent=False):
