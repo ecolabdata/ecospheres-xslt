@@ -2,8 +2,8 @@ import pytest
 import tomllib
 from colorama import Fore, init
 from difflib import unified_diff
-from lxml import etree
 from pathlib import Path
+from saxonche import PySaxonProcessor, PySaxonApiError
 
 init()
 
@@ -12,43 +12,53 @@ FIXTURE_DIR = Path("fixtures")
 TEST_DIR = Path("tests")
 XSLT_FIXTURE_SEP = "."
 
+SAXON_PROC = PySaxonProcessor(license=False)
+SAXON_PROC.set_configuration_property("http://saxon.sf.net/feature/strip-whitespace", "all")
+
 
 # Pytest entry point
 def pytest_generate_tests(metafunc):
-    argnames = ["standard_name", "xslt_name", "fixture_name", "test_stem", "test_suffix", "has_config"]
+    argnames = ["standard_name", "xslt_name", "fixture_name", "test_stem", "test_suffix"]
     if not set(argnames) <= set(metafunc.fixturenames):
         raise RuntimeError("Cannot find test function")
     metafunc.parametrize(argnames, list_test_cases())
 
 
 # Pytest parametrized test function
-def test_transform(standard_name, xslt_name, fixture_name, test_stem, test_suffix, has_config):
+def test_transform(standard_name, xslt_name, fixture_name, test_stem, test_suffix):
     standard_path = BASE_PATH/standard_name
     xslt_path = resolve(standard_path/f"{xslt_name}.xsl")
     fixture_path = resolve(standard_path/FIXTURE_DIR/f"{fixture_name}.xml")
     expected_path = resolve(standard_path/TEST_DIR/f"{test_stem}.{test_suffix}")
     messages_path = resolve(standard_path/TEST_DIR/f"{test_stem}.msg", silent=True)
-    test_params = (
-        load_test_params(resolve(standard_path/TEST_DIR/f"{test_stem}.conf")) if has_config else {}
-    )
+    config_path = resolve(standard_path/TEST_DIR/f"{test_stem}.conf", silent=True)
 
-    transform = etree.XSLT(etree.parse(xslt_path))
-
-    fixture_tree = etree.parse(fixture_path)
+    xslt_proc = SAXON_PROC.new_xslt30_processor()
+    xslt_exec = xslt_proc.compile_stylesheet(stylesheet_file=str(xslt_path))
+    xslt_exec.set_property("!omit-xml-declaration", "no")
+    xslt_exec.set_property("!indent", "yes")
+    xslt_exec.set_save_xsl_message(True)
+    if config_path:
+        with config_path.open(mode="rb") as f:
+            params = tomllib.load(f).get("params", {})
+            for param_name, param_value in params.items():
+                if v := param_value.strip():
+                    xslt_exec.set_parameter(param_name, SAXON_PROC.make_string_value(v))
 
     if test_suffix == "xml":
-        actual_tree = transform(fixture_tree, **test_params)
-        expected_tree = etree.parse(expected_path)
+        actual_tree = xslt_exec.transform_to_value(source_file=str(fixture_path)).head
+        expected_tree = SAXON_PROC.parse_xml(xml_file_name=str(expected_path))
         compare_trees(actual_tree, expected_tree)
         if messages_path:
-            actual_messages = [e.message for e in transform.error_log]
-            expected_messages = messages_path.open().readlines()
+            actual_messages = get_actual_messages(xslt_exec)
+            expected_messages = get_expected_messages(messages_path)
             compare_messages(actual_messages, expected_messages)
     elif test_suffix == "err":
-        expected_error = expected_path.open().read().strip()
-        with pytest.raises(etree.XSLTApplyError) as e:
-            transform(fixture_tree, **test_params)
-        assert str(e.value).strip() == expected_error
+        with pytest.raises(PySaxonApiError):
+            xslt_exec.transform_to_string(source_file=str(fixture_path))
+        actual_messages = get_actual_messages(xslt_exec)
+        expected_messages = get_expected_messages(expected_path)
+        compare_messages(actual_messages, expected_messages)
 
 
 def list_test_cases():
@@ -64,14 +74,12 @@ def list_test_cases():
                 test_stem = test_path.stem
                 parts = test_stem.split(XSLT_FIXTURE_SEP)
                 fixture_name = parts[1]
-                has_config = len(parts) > 2
                 yield pytest.param(
                     standard_name,
                     xslt_name,
                     fixture_name,
                     test_stem,
                     test_suffix,
-                    has_config,
                     id=f"{standard_name}:{test_stem}",
                 )
 
@@ -85,15 +93,23 @@ def resolve(path, silent=False):
     return path
 
 
-def load_test_params(config_path):
-    with config_path.open(mode="rb") as f:
-        params = tomllib.load(f).get("params", {})
-    return {k: etree.XSLT.strparam(v) for k, v in params.items()}
+def get_expected_messages(path) -> list[str]:
+    return [line for line in path.open() if not line.strip().startswith("#")]
+
+
+def get_actual_messages(xslt_exec) -> list[str]:
+    if messages := xslt_exec.get_xsl_messages():
+        return [node.string_value for node in messages]
+    else:
+        return []
 
 
 def to_string(tree):
-    etree.indent(tree)
-    return etree.tostring(tree, pretty_print=True, encoding="unicode")
+    xquery_proc = SAXON_PROC.new_xquery_processor()
+    xquery_proc.set_property("!omit-xml-declaration", "no")
+    xquery_proc.set_property("!indent", "yes")
+    xquery_proc.set_context(xdm_item=tree)
+    return xquery_proc.run_query_to_string(query_text=".")
 
 
 def compare_trees(actual_tree, expected_tree):

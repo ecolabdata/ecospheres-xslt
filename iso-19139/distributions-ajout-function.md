@@ -11,8 +11,8 @@ Ajoute un élément de type `gmd:function` à une distribution.
 |:--------------------|:-------|:-----------|:------------|
 | `match-field`       | oui    | \<aucun>   | Champ dans lequel rechercher `match-string`, parmi : <ul><li>"name" : Recherche dans `gmd:name/gco:CharacterString`.</li><li>"url" : Recherche dans `gmd:linkage/gmd:URL`.</li><li>"protocol" : Recherche (textuelle) dans `gmd:protocol/*`.</li></ul> |
 | `match-string`      | oui    | \<aucun>   | Chaîne de caractères à rechercher dans `match-field`. |
-| `function-type`     | oui    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
-| `override-existing` | oui    | "no"       | Si "no", seules les distributions ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les distributions contenant déjà un `gmd:function` sont également prises en compte, et un `gmd:function` existant sera remplacé. |
+| `function-type`     | non    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
+| `override-existing` | non    | "no"       | Si "no", seules les distributions ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les distributions contenant déjà un `gmd:function` sont également prises en compte, et un `gmd:function` existant sera remplacé. |
 
 </div></div></div></div>
 

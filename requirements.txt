@@ -1,5 +1,5 @@
 colorama
-lxml
 pytest
 pre-commit
 ruff
+saxonche
