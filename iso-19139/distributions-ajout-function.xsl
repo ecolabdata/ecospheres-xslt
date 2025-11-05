@@ -15,8 +15,8 @@
 
   <xsl:param name="match-field" required="yes"/>
   <xsl:param name="match-string" required="yes"/>
-  <xsl:param name="function-type" select="'download'" required="yes"/>
-  <xsl:param name="override-existing" select="'no'" required="yes"/>
+  <xsl:param name="function-type" select="'download'"/>
+  <xsl:param name="override-existing" select="'no'"/>
 
   <xsl:variable name="match-string-normalized">
     <xsl:call-template name="normalize-string">
@@ -25,13 +25,6 @@
   </xsl:variable>
 
   <xsl:template match="gmd:transferOptions/*/gmd:onLine/gmd:CI_OnlineResource">
-    <xsl:if test="$match-field = ''">
-      <xsl:message terminate="yes">Error: Empty parameter "match-field"</xsl:message>
-    </xsl:if>
-    <xsl:if test="$match-string-normalized = ''">
-      <xsl:message terminate="yes">Error: Empty parameter "match-string"</xsl:message>
-    </xsl:if>
-
     <xsl:variable name="function">
       <xsl:choose>
         <xsl:when test="not(gmd:function) or $override-existing = 'yes'">
