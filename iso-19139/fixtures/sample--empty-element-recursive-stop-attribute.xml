@@ -12,12 +12,14 @@
     <gmd:MD_Distribution>
       <gmd:distributionFormat>
         <gmd:MD_Format>
-          <gmd:name gco:nilReason="missing">
-            <gco:CharacterString />
-          </gmd:name>
-          <gmd:version gco:nilReason="unknown">
-            <gco:CharacterString />
-          </gmd:version>
+          <gmd:formatDistributor gco:nilReason="unknown">
+            <gmd:MD_Distributor>
+              <gmd:distributorContact>
+              </gmd:distributorContact>
+              <gmd:distributorFormat>
+              </gmd:distributorFormat>
+            </gmd:MD_Distributor>
+          </gmd:formatDistributor>
         </gmd:MD_Format>
       </gmd:distributionFormat>
     </gmd:MD_Distribution>

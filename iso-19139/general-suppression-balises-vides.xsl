@@ -41,7 +41,18 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Remove empty elements -->
+  <!-- Keep empty <gco:CharacterString> elements iff parent would not be empty after
+       removing the element (i.e. parent has attributes or other non-empty children).
+       This is because GeoNetwork's editor seems to rely on them to display text boxes -->
+  <xsl:template match="gco:CharacterString[not(normalize-space()) and not(*)
+                       and (parent::*[@*] or parent::*[*[not(self::gco:CharacterString)]])]"
+                mode="cleanup" priority="2">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" mode="cleanup"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Remove all other empty elements (i.e. no attributes and no children) -->
   <xsl:template match="*[not(normalize-space()) and not(*) and not(@*)]" mode="cleanup"/>
 
   <!-- Identity template -->
