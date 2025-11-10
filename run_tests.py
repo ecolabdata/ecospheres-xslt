@@ -117,6 +117,8 @@ def compare_trees(actual_tree, expected_tree):
     expected_lines = to_string(expected_tree).splitlines()
     diff = unified_diff(expected_lines, actual_lines, lineterm="")
     if any(d[0] != " " for d in diff):
+        print(f"{Fore.RED}--- expected{Fore.RESET}")
+        print(f"{Fore.GREEN}+++ output{Fore.RESET}")
         print("\n".join(list(color_diff(diff))[1:]))
         pytest.fail("XSLT output != expected\n" + "\n".join(diff), pytrace=False)
 
@@ -126,6 +128,8 @@ def compare_messages(actual_messages, expected_messages):
     expected_lines = [m.strip() for m in expected_messages]
     if not all([m in actual_lines for m in expected_lines]):
         diff = unified_diff(expected_lines, actual_lines, lineterm="")
+        print(f"{Fore.RED}--- expected{Fore.RESET}")
+        print(f"{Fore.GREEN}+++ output{Fore.RESET}")
         print("\n".join(list(color_diff(diff))[2:]))
         pytest.fail("MSG output != expected" + "\n".join(diff), pytrace=False)
 
