@@ -41,7 +41,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Keep empty <gco:CharacterString> elements iff parent would not be empty after
+  <!-- Keep empty <gco:CharacterString> elements if parent would not be empty after
        removing the element (i.e. parent has attributes or other non-empty children).
        This is because GeoNetwork's editor seems to rely on them to display text boxes -->
   <xsl:template match="gco:CharacterString[not(normalize-space()) and not(*)
