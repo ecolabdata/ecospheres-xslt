@@ -29,20 +29,23 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- In safe-mode, only the sub-trees matching this template will be recursively pruned.
-       The rest of the tree will be preserved as-is, without any pruning.
+  <!-- In safe-mode, only sub-trees matching this template will be pruned.
+       The rest of the tree will be preserved as-is.
 
        Paths should be AS SPECIFIC AS POSSIBLE to avoid matching in unexpected locations:
-       - Ancestors restrict where in the tree we can safely match.
-       - Pruning starts at the last element in the path, that last element included.
+       - Ancestors restrict where in the tree we can safely prune.
+       - Pruning starts at the last element in the path, with that last element included.
 
        Examples:
 
        match="gmd:identifier"
-       => Prune gmd:identifier sub-tree (when empty) anywhere in the tree.
+       => Prune gmd:identifier sub-tree anywhere in the tree.
+
+       match="gmd:identifier/*"
+       => Prune sub-trees under gmd:identifier, but preserving the gmd:identifier nodes.
 
        match="gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier"
-       => Prune gmd:identifier sub-tree (when empty) only under //gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation.
+       => Prune gmd:identifier sub-tree only under //gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation.
 
        Expected format: match="some/path | another/different/path | ..."
   -->
@@ -60,25 +63,25 @@
 
        Expected format: match="ns1:element | ns2:other_element | ..."
   -->
-  <xsl:template match="gco:CharacterString" name="preserve-with-parent"
+  <xsl:template match="gco:CharacterString"
                 mode="prune-maybe" priority="1">
     <xsl:copy-of select="."/>
   </xsl:template>
 
   <!-- Recursive pruning template -->
   <xsl:template match="*" mode="prune-all prune-maybe">
-    <!-- say we recursively pruned the sub-tree from our current node -->
+    <!-- say we pruned the sub-tree while ignoring the "prune-maybe" rules... -->
     <xsl:variable name="kids">
-      <xsl:apply-templates select="node()" mode="#current"/>
+      <xsl:apply-templates select="node()" mode="prune-all"/>
     </xsl:variable>
 
-    <!-- ... let's see what the result tree (current node + subtree) looks like -->
+    <!-- ...what would the resulting tree (current node + pruned sub-tree) look like? -->
     <xsl:choose>
       <xsl:when test="not(@*) and not(normalize-space($kids)) and not($kids/*)">
-        <!-- the resulting tree is empty => we're done, there's nothing to output -->
+        <!-- tree would be empty => we're done -->
       </xsl:when>
       <xsl:otherwise>
-        <!-- the resulting tree is not empty => recurse more carefully -->
+        <!-- tree would not be empty => keep current node and recurse with "prune-maybe" rules -->
         <xsl:copy>
           <xsl:copy-of select="@*"/>
           <xsl:apply-templates select="node()" mode="prune-maybe"/>
@@ -88,7 +91,7 @@
   </xsl:template>
 
 
-  <!-- Identity template when not pruning -->
+  <!-- Identity template when pruning is disabled -->
   <xsl:template match="@*|node()" mode="prune-off">
     <xsl:copy>
       <xsl:apply-templates select="@*|node()" mode="prune-off"/>
