@@ -3,17 +3,14 @@
   Doc: https://github.com/ecolabdata/ecospheres-xslt/blob/main/iso-19139/general-suppression-balises-vides.md
 -->
 
-<xsl:stylesheet
-    version="2.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:gmd="http://www.isotc211.org/2005/gmd"
-    xmlns:gco="http://www.isotc211.org/2005/gco"
-    xmlns:gml="http://www.opengis.net/gml"
-    exclude-result-prefixes="#all">
+<xsl:stylesheet version="2.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                xmlns:gco="http://www.isotc211.org/2005/gco"
+                xmlns:gml="http://www.opengis.net/gml"
+                exclude-result-prefixes="#all">
 
   <xsl:param name="safe-mode" select="'yes'"/>
-  <!-- TODO: <xsl:param name="safe-mode" select="true()" as="xs:boolean"/> -->
 
   <!-- Entry point -->
   <xsl:template match="/" priority="1">
