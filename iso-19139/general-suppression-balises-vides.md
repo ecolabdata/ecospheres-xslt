@@ -9,7 +9,7 @@ Supprime les balises vides.
 
 | Paramètre   | Requis | Défaut | Description |
 |:------------|:-------|:-------|:------------|
-| `safe-mode` | non    | "yes" | Si "yes", supprime uniquement les balises vides "sûres". Si "no", supprime **toutes** les balises vides. |
+| `safe-mode` | non    | "yes"  | Si "yes", supprime uniquement les balises vides "sûres". Si "no", supprime **toutes** les balises vides. |
 
 </div></div></div></div>
 
@@ -21,31 +21,31 @@ Aucun.
 
 ## Motivation
 
-Les balises vides (ni contenu, ni attributs) peuvent créer des problèmes tels que :
+Les balises vides (ni attributs, ni balises filles, ni contenu) peuvent créer des problèmes tels que :
 - Masquer d'autres balises dans les cas où seule la première occurrence d'une balise est prise en compte.
 - Valider à tort des contraintes se basant uniquement sur la présence d'une balise sans vérifier le contenu attendu.
-- Complexifier inutilement les fiches XML et dans certains cas afficher inutilement les champs équivalents dans les interfaces utilisateurs.
+- Complexifier inutilement les fiches XML et dans certains cas afficher des champs superflus dans les interfaces utilisateurs.
 
 Supprimer les balises vides peut cependant être risqué dans certains cas :
-- Le standard peut avoir attribué une sémantique à la simple présence d'une certaine balise, même vide.
-- Les applicatifs exploitant le XML peuvent subit des effets de bords lorsque les balises vides sont supprimées, même si en théorie il n'est pas prévu que cela ait un impact.
+- Le standard peut avoir attribué une sémantique à la simple présence d'une balise, même vide.
+- Les applicatifs exploitant le XML peuvent subir des effets de bords lorsque les balises vides sont supprimées, même si en théorie il n'est pas prévu que cela ait un impact.
 
-Pour ces raisons, cette transformation ne s'applique qu'à certaines balises pour lesquelles nous avons jugé que la présence d'une balise vide est plus dommageable que sa suppression.
+Pour ces raisons, lorsque `safe-mode` est activé (mode par défaut), cette transformation ne s'applique qu'à un nombre limité de balises pour lesquelles nous avons jugé que la présence d'une balise vide est plus dommageable que sa suppression :
+- `//gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier`
 
-Actuellement, les balises suivantes sont supprimées lorsqu'elles sont vides :
-- `//gmd:MD_DataIdentification//gmd:CI_Citation//gmd:MD_Identifier`
-
-Cette liste pourra être complétée à mesure que nous identifions d'autres cas problèmatiques.
+Cette liste pourra être complétée à mesure que nous identifions d'autres cas pertinents.
 
 
 ## Limites
 
-Cette transformation fait l'hypothèse que l'occurrence vide d'une balise est sémantiquement équivalent à l'absence de cette balise.
+Cette transformation fait l'hypothèse que l'occurrence vide d'une balise est sémantiquement équivalent à l'absence de cette balise. Comme indiqué dans la section *Motivation*, il peut éventuellement exister des cas particuliers où cette hypothèse s'avère fausse.
 
-Comme indiqué dans la section *Motivation*, il peut éventuellement exister des cas particuliers où cette hypothèse s'avère fausse. Il est donc important, surtout lorsque l'option `remove-all` est activée, de vérifier l'impact de cette transformation sur le catalogue cible, ou d'utiliser la transformation uniquement pour évaluer les problèmes, sans appliquer les modifications au catalogue cible.
+Il est donc important, surtout lorsque l'option `safe-mode` est désactivée, de vérifier l'impact de cette transformation sur le catalogue cible, ou d'utiliser la transformation uniquement pour évaluer les problèmes, sans appliquer les modifications au catalogue cible.
 
 
 ## Exemples
+
+### `safe-mode` activé
 
 ```
 <gmd:citation>
@@ -93,11 +93,10 @@ devient :
 </gmd:citation>
 ```
 
-<br/>
 
-**Avec l'option `remove-all` activée** :
+### `safe-mode` désactivé
 
-<br/>
+Dans ce mode, toutes les balises vides sont supprimées. Les exemples ci-dessous illustrent quelques cas particuliers.
 
 ```
 <gmd:extent>
@@ -150,5 +149,7 @@ devient :
 
 
 ## Références
+
+https://github.com/ecolabdata/ecospheres/issues/814
 
 https://github.com/ecolabdata/ecospheres-xslt/issues/24
