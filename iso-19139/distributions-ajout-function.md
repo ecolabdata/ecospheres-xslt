@@ -33,9 +33,9 @@ Le convertisseur SEMICeu identifie une distribution (au sens ISO) comme distribu
 
 En attendant une éventuelle évolution de ces contraintes, les moyens de faire figurer un élément dans l'onglet "Fichiers" d'une fiche data.gouv.fr sont donc ceux imposés par la conversion SEMICeu.
 
-Pour les services de types WFS/WMS/WMTS, de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant l'URL des distributions, qui devraient pointer sur le "GetCapabilities" du service et donc contenir "request=GetCapabilities" (voir la transformation [distributions-ajout-parametres-ogc](distributions-ajout-parametres-ogc.md).
+Pour les distributions de types OGC WFS/WMS/etc., de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant leur URL pour la faire pointer sur la requête "GetCapabilities" du service (voir la transformation [distributions-ajout-parametres-ogc](distributions-ajout-parametres-ogc.md).
 
-Cependant, pour d'autres types de services (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter un `gmd:function` de type "download".
+Cependant, pour d'autres types de distributions (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter un `gmd:function` de type "download".
 
 
 ## Limites
