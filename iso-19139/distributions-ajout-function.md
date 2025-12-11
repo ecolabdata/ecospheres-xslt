@@ -27,14 +27,15 @@ Aucun.
 data.gouv.fr n'affiche que les distributions au sens DCAT dans l'onglet "Fichiers".
 Les autres distributions au sens ISO sont actuellement ignorées.
 
-Le convertisseur SEMICeu identifie une distribution (au sens ISO) comme distribution (au sens DCAT) uniquement dans les conditions suivantes : 
+Le convertisseur SEMICeu identifie une distribution (au sens ISO) comme distribution (au sens DCAT) uniquement dans les conditions suivantes :
 - l'URL de la distribution contient "request=GetCapabilities", ou
 - la distribution déclare une `gmd:function` de type "download, "offlineAccess" ou "order".
 
 En attendant une éventuelle évolution de ces contraintes, les moyens de faire figurer un élément dans l'onglet "Fichiers" d'une fiche data.gouv.fr sont donc ceux imposés par la conversion SEMICeu.
 
-Pour les services de types WFS/WMS/WMTS, de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant l'URL des distributions, qui devraient pointer sur le "GetCapabilities" du service et donc contenir "request=GetCapabilities".
-Cependant, pour d'autres types de services (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter un `gmd:function` de type "download".
+Pour les distributions de type OGC WFS/WMS/etc., de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant leur URL pour la faire pointer sur la requête "GetCapabilities" du service (voir la transformation [distributions-ajout-parametres-ogc](distributions-ajout-parametres-ogc.md).
+
+Cependant, pour d'autres types de distributions (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter un `gmd:function` de type "download".
 
 
 ## Limites
