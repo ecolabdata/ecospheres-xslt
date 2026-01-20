@@ -29,9 +29,18 @@ Nous constatons en pratique que certains catalogues utilisent le premier emplace
 
 ## Limites
 
+### Applicabilité
+
 Cette transformation fait l'hypothèse d'une équivalence sémantique entre les deux emplacements définis par le standard ISO-19139. Cette hypothèse est fausse en général, mais elle peut s'avérer pertinente dans le contexte INSPIRE, qui ne mentionne qu'un seul emplacement.
 
-L'administrateur de catalogue doit donc impérativement s'assurer que l'hypothèse s'applique à son catalogue avant d'utiliser cette transformation.
+**L'administrateur de catalogue doit donc impérativement s'assurer que l'hypothèse s'applique à son catalogue avant d'utiliser cette transformation.**
+
+
+### Validation
+
+Cette transformation ne respecte pas la condition d'ordre imposée par le schéma XSL ISO-19139, plaçant systématiquement l'élément `gmd:resourceMaintenance` en dernier dans `gmd:MD_DataIdentification`.
+
+En pratique cela n'a pas d'impact sur GéoNetwork, mais une validation étendue du schéma peut éventuellement échouer pour cette raison. Dans ce cas, il suffit de re-sauvegarder la fiche depuis GéoNetwork pour que les éléments soient automatiquement réorganisés.
 
 
 ## Exemples
