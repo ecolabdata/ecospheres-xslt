@@ -19,7 +19,7 @@
   <xsl:template match="/gmd:MD_Metadata/gmd:metadataMaintenance">
     <xsl:choose>
       <xsl:when test="$destination">
-        <xsl:message>Destination already exists</xsl:message>
+        <xsl:message>[isomorphe:check] 'gmd:metadataMaintenance' écraserait 'gmd:resourceMaintenance'.</xsl:message>
         <xsl:copy-of select="."/>
       </xsl:when>
       <xsl:otherwise>
