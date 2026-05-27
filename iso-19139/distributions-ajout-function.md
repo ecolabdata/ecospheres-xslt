@@ -11,7 +11,7 @@ Ajoute un élément de type `gmd:function` à une ressource en ligne.
 |:--------------------|:-------|:-----------|:------------|
 | `match-field`       | oui    | \<aucun>   | Champ dans lequel rechercher `match-string`, parmi : <ul><li>"name" : Recherche dans `gmd:name/gco:CharacterString`.</li><li>"url" : recherche dans `gmd:linkage/gmd:URL` ;</li><li>"protocol" : recherche (textuelle) dans `gmd:protocol/*`.</li></ul> |
 | `match-string`      | oui    | \<aucun>   | Chaîne de caractères à rechercher dans `match-field`. |
-| `function-type`     | non    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
+| `function-type`     | non    | "download" | Type de `gmd:function` à ajouter à la ressource en ligne, parmi "download", "offlineAccess", "order". |
 | `override-existing` | non    | "no"       | Si "no", seules les ressources en ligne ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les ressources en ligne contenant déjà un `gmd:function` sont également prises en compte, et le `gmd:function` existant sera remplacé. |
 
 </div></div></div></div>
