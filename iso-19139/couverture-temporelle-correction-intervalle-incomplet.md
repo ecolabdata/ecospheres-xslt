@@ -17,7 +17,7 @@ Aucun.
 
 La [spécification GML](https://portal.ogc.org/files/?artifact_id=20509) définit que `gml:TimePeriod` doit contenir une borne de début *et* une borne de fin (section 14.2.2.5).
 
-La borne manquante est ajoutée avec la valeur `unknown`, qui "indique qu'aucune valeur spécifique pour la position temporelle n'est fournie" (section 14.2.2.7).
+La borne manquante est ajoutée avec la valeur "unknown", qui "indique qu'aucune valeur spécifique pour la position temporelle n'est fournie" (section 14.2.2.7).
 
 
 ## Exemples
