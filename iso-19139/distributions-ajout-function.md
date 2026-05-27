@@ -50,32 +50,28 @@ Attention à utiliser des chaîne de caractères suffisamment précises pour év
 
 ## Exemples
 
-```
-<gmd:CI_OnlineResource>
-  <gmd:linkage>
-    <gmd:URL>http://atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource?id=...</gmd:URL>
-  </gmd:linkage>
-  <gmd:name>
-    <gco:CharacterString>Téléchargement simple (Atom) du jeu et des documents associés via internet</gco:CharacterString>
-  </gmd:name>
-</gmd:CI_OnlineResource>
-```
+    <gmd:CI_OnlineResource>
+      <gmd:linkage>
+        <gmd:URL>http://atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource?id=...</gmd:URL>
+      </gmd:linkage>
+      <gmd:name>
+        <gco:CharacterString>Téléchargement simple (Atom) du jeu et des documents associés via internet</gco:CharacterString>
+      </gmd:name>
+    </gmd:CI_OnlineResource>
 
 devient :
 
-```
-<gmd:CI_OnlineResource>
-  <gmd:linkage>
-    <gmd:URL>http://atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource?id=...</gmd:URL>
-  </gmd:linkage>
-  <gmd:name>
-    <gco:CharacterString>Téléchargement simple (Atom) du jeu et des documents associés via internet</gco:CharacterString>
-  </gmd:name>
-  <gmd:function>
-    <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
-  </gmd:function>
-</gmd:CI_OnlineResource>
-```
+    <gmd:CI_OnlineResource>
+      <gmd:linkage>
+        <gmd:URL>http://atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource?id=...</gmd:URL>
+      </gmd:linkage>
+      <gmd:name>
+        <gco:CharacterString>Téléchargement simple (Atom) du jeu et des documents associés via internet</gco:CharacterString>
+      </gmd:name>
+      <gmd:function>
+        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+      </gmd:function>
+    </gmd:CI_OnlineResource>
 
 Ce résultat peut etre obtenu avec les recherches suivantes (entre autres) :
 - `match-field` = "name" / `match-string` : "Téléchargement simple (Atom)" ;

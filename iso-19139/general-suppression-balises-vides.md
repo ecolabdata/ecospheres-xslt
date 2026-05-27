@@ -47,105 +47,92 @@ Il est donc important, surtout lorsque l'option `safe-mode` est désactivée, de
 
 ### `safe-mode` activé
 
-```
-<gmd:citation>
-  <gmd:CI_Citation>
-    <gmd:title>
-      <gco:CharacterString>Titre de la fiche</gco:CharacterString>
-    </gmd:title>
-    ...
-    <gmd:identifier>
-      <gmd:MD_Identifier>
-        <gmd:code>
-          <gco:CharacterString></gco:CharacterString>
-        </gmd:code>
-      </gmd:MD_Identifier>
-    </gmd:identifier>
-    <gmd:identifier>
-      <gmd:MD_Identifier>
-        <gmd:code>
-          <gco:CharacterString>https://www.example.com/moncatalogue/3374b038-d51a-49fa-98e5-6e68f6aff186</gco:CharacterString>
-        </gmd:code>
-      </gmd:MD_Identifier>
-    </gmd:identifier>
-  </gmd:CI_Citation>
-</gmd:citation>
-```
+    <gmd:citation>
+      <gmd:CI_Citation>
+        <gmd:title>
+          <gco:CharacterString>Titre de la fiche</gco:CharacterString>
+        </gmd:title>
+        ...
+        <gmd:identifier>
+          <gmd:MD_Identifier>
+            <gmd:code>
+              <gco:CharacterString></gco:CharacterString>
+            </gmd:code>
+          </gmd:MD_Identifier>
+        </gmd:identifier>
+        <gmd:identifier>
+          <gmd:MD_Identifier>
+            <gmd:code>
+              <gco:CharacterString>https://www.example.com/moncatalogue/3374b038-d51a-49fa-98e5-6e68f6aff186</gco:CharacterString>
+            </gmd:code>
+          </gmd:MD_Identifier>
+        </gmd:identifier>
+      </gmd:CI_Citation>
+    </gmd:citation>
 
 devient :
 
-```
-<gmd:citation>
-  <gmd:CI_Citation>
-    <gmd:title>
-      <gco:CharacterString>Titre de la fiche</gco:CharacterString>
-    </gmd:title>
-    ...
-    <!-- La première section <gmd:identifier> est supprimée car récursivement vide -->
-    <gmd:identifier>
-      <gmd:MD_Identifier>
-        <gmd:code>
-          <gco:CharacterString>https://www.example.com/moncatalogue/3374b038-d51a-49fa-98e5-6e68f6aff186</gco:CharacterString>
-        </gmd:code>
-      </gmd:MD_Identifier>
-    </gmd:identifier>
-  </gmd:CI_Citation>
-</gmd:citation>
-```
+    <gmd:citation>
+      <gmd:CI_Citation>
+        <gmd:title>
+          <gco:CharacterString>Titre de la fiche</gco:CharacterString>
+        </gmd:title>
+        ...
+        <!-- La première section <gmd:identifier> est supprimée car récursivement vide -->
+        <gmd:identifier>
+          <gmd:MD_Identifier>
+            <gmd:code>
+              <gco:CharacterString>https://www.example.com/moncatalogue/3374b038-d51a-49fa-98e5-6e68f6aff186</gco:CharacterString>
+            </gmd:code>
+          </gmd:MD_Identifier>
+        </gmd:identifier>
+      </gmd:CI_Citation>
+    </gmd:citation>
 
 
 ### `safe-mode` désactivé
 
 Dans ce mode, toutes les balises vides sont supprimées. Les exemples ci-dessous illustrent quelques cas particuliers.
 
-```
-<gmd:extent>
-  <gml:TimePeriod>
-    <gml:beginPosition></gml:beginPosition>
-    <gml:endPosition>2014-02-02</gml:endPosition>
-  </gml:TimePeriod>
-</gmd:extent>
-```
+    <gmd:extent>
+      <gml:TimePeriod>
+        <gml:beginPosition></gml:beginPosition>
+        <gml:endPosition>2014-02-02</gml:endPosition>
+      </gml:TimePeriod>
+    </gmd:extent>
 
 devient :
 
-```
-<gmd:extent>
-  <gml:TimePeriod>
-    <gml:endPosition>2014-02-02</gml:endPosition>
-  </gml:TimePeriod>
-</gmd:extent>
-```
+    <gmd:extent>
+      <gml:TimePeriod>
+        <gml:endPosition>2014-02-02</gml:endPosition>
+      </gml:TimePeriod>
+    </gmd:extent>
 
 <br/>
 
-
-```
-<gmd:distributionFormat>
-  <gmd:MD_Format>
-    <gmd:name gco:nilReason="missing">
-      <gco:CharacterString />
-    </gmd:name>
-    <gmd:version gco:nilReason="unknown">
-      <gco:CharacterString />
-    </gmd:version>
-  </gmd:MD_Format>
-</gmd:distributionFormat>
-```
+    <gmd:distributionFormat>
+      <gmd:MD_Format>
+        <gmd:name gco:nilReason="missing">
+          <gco:CharacterString />
+        </gmd:name>
+        <gmd:version gco:nilReason="unknown">
+          <gco:CharacterString />
+        </gmd:version>
+      </gmd:MD_Format>
+    </gmd:distributionFormat>
 
 devient :
 
-```
-<gmd:MD_Distribution>
-  <gmd:distributionFormat>
-    <gmd:MD_Format>
-      <!-- Les balises sans contenu mais possédant des attributs sont préservées -->
-      <gmd:name gco:nilReason="missing" />
-      <gmd:version gco:nilReason="unknown" />
-    </gmd:MD_Format>
-  </gmd:distributionFormat>
-</gmd:MD_Distribution>
-```
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <!-- Les balises sans contenu mais possédant des attributs sont préservées -->
+          <gmd:name gco:nilReason="missing" />
+          <gmd:version gco:nilReason="unknown" />
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+    </gmd:MD_Distribution>
 
 
 ## Références

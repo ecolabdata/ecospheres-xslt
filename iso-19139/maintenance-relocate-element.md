@@ -45,41 +45,37 @@ En pratique cela n'a pas d'impact sur GéoNetwork, mais une validation étendue 
 
 ## Exemples
 
-```
-<gmd:MD_Metadata ...>
-  <gmd:identificationInfo>
-    <gmd:MD_DataIdentification>
-      ...
-    </gmd:MD_DataIdentification>
-  </gmd:identificationInfo>
-  <gmd:metadataMaintenance>
-    <gmd:MD_MaintenanceInformation>
-      <gmd:maintenanceAndUpdateFrequency>
-        <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="annual"/>
-      </gmd:maintenanceAndUpdateFrequency>
-    </gmd:MD_MaintenanceInformation>
-  </gmd:metadataMaintenance>
-</gmd:MD_Metadata>
-```
-
-devient :
-
-```
-<gmd:MD_Metadata ...>
-  <gmd:identificationInfo>
-    <gmd:MD_DataIdentification>
-      ...
-      <gmd:resourceMaintenance>
+    <gmd:MD_Metadata ...>
+      <gmd:identificationInfo>
+        <gmd:MD_DataIdentification>
+          ...
+        </gmd:MD_DataIdentification>
+      </gmd:identificationInfo>
+      <gmd:metadataMaintenance>
         <gmd:MD_MaintenanceInformation>
           <gmd:maintenanceAndUpdateFrequency>
             <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="annual"/>
           </gmd:maintenanceAndUpdateFrequency>
         </gmd:MD_MaintenanceInformation>
-      </gmd:resourceMaintenance>
-    </gmd:MD_DataIdentification>
-  </gmd:identificationInfo>
-</gmd:MD_Metadata>
-```
+      </gmd:metadataMaintenance>
+    </gmd:MD_Metadata>
+
+devient :
+
+    <gmd:MD_Metadata ...>
+      <gmd:identificationInfo>
+        <gmd:MD_DataIdentification>
+          ...
+          <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+              <gmd:maintenanceAndUpdateFrequency>
+                <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="annual"/>
+              </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+          </gmd:resourceMaintenance>
+        </gmd:MD_DataIdentification>
+      </gmd:identificationInfo>
+    </gmd:MD_Metadata>
 
 
 ## Références

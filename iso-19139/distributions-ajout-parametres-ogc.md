@@ -40,31 +40,27 @@ Pour d'autres types de ressources en ligne (par exemple ATOM) et certains cas pa
 
 ## Exemples
 
-```
-<gmd:CI_OnlineResource>
-  <gmd:linkage>
-    <gmd:URL>https://example.com/wfs</gmd:URL>
-  </gmd:linkage>
-  <gmd:protocol>
-    <gco:CharacterString>OGC:WFS</gco:CharacterString>
-  </gmd:protocol>
-  ...
-</gmd:CI_OnlineResource>
-```
+    <gmd:CI_OnlineResource>
+      <gmd:linkage>
+        <gmd:URL>https://example.com/wfs</gmd:URL>
+      </gmd:linkage>
+      <gmd:protocol>
+        <gco:CharacterString>OGC:WFS</gco:CharacterString>
+      </gmd:protocol>
+      ...
+    </gmd:CI_OnlineResource>
 
 devient :
 
-```
-<gmd:CI_OnlineResource>
-  <gmd:linkage>
-    <gmd:URL>https://example.com/wfs?service=WFS&request=GetCapabilities</gmd:URL>
-  </gmd:linkage>
-  <gmd:protocol>
-    <gco:CharacterString>OGC:WFS</gco:CharacterString>
-  </gmd:protocol>
-  ...
-</gmd:CI_OnlineResource>
-```
+    <gmd:CI_OnlineResource>
+      <gmd:linkage>
+        <gmd:URL>https://example.com/wfs?service=WFS&request=GetCapabilities</gmd:URL>
+      </gmd:linkage>
+      <gmd:protocol>
+        <gco:CharacterString>OGC:WFS</gco:CharacterString>
+      </gmd:protocol>
+      ...
+    </gmd:CI_OnlineResource>
 
 
 ## Références
