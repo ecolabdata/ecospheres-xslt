@@ -22,16 +22,16 @@ Aucun.
 ## Motivation
 
 Les balises vides (ni attributs, ni balises filles, ni contenu) peuvent créer des problèmes tels que :
-- Masquer d'autres balises dans les cas où seule la première occurrence d'une balise est prise en compte.
-- Valider à tort des contraintes se basant uniquement sur la présence d'une balise sans vérifier le contenu attendu.
-- Complexifier inutilement les fiches XML et dans certains cas afficher des champs superflus dans les interfaces utilisateurs.
+- masquer d'autres balises dans les cas où seule la première occurrence d'une balise est prise en compte ;
+- valider à tort des contraintes se basant uniquement sur la présence d'une balise sans vérifier le contenu attendu ;
+- complexifier inutilement les fiches XML et dans certains cas afficher des champs superflus dans les interfaces utilisateurs.
 
 Supprimer les balises vides peut cependant être risqué dans certains cas :
-- Le standard peut avoir attribué une sémantique à la simple présence d'une balise, même vide.
-- Les applicatifs exploitant le XML peuvent subir des effets de bords lorsque les balises vides sont supprimées, même si en théorie il n'est pas prévu que cela ait un impact.
+- le standard peut avoir attribué une sémantique à la simple présence d'une balise, même vide ;
+- les applicatifs exploitant le XML peuvent subir des effets de bords lorsque les balises vides sont supprimées, même si en théorie il n'est pas prévu que cela ait un impact.
 
 Pour ces raisons, lorsque `safe-mode` est activé (mode par défaut), cette transformation ne s'applique qu'à un nombre limité de balises pour lesquelles nous avons jugé que la présence d'une balise vide est plus dommageable que sa suppression :
-- `//gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier`
+- `//gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier`.
 
 Cette liste pourra être complétée à mesure que nous identifions d'autres cas pertinents.
 

@@ -9,7 +9,7 @@ Ajoute un élément de type `gmd:function` à une ressource en ligne.
 
 | Paramètre           | Requis | Défaut     | Description |
 |:--------------------|:-------|:-----------|:------------|
-| `match-field`       | oui    | \<aucun>   | Champ dans lequel rechercher `match-string`, parmi : <ul><li>"name" : Recherche dans `gmd:name/gco:CharacterString`.</li><li>"url" : Recherche dans `gmd:linkage/gmd:URL`.</li><li>"protocol" : Recherche (textuelle) dans `gmd:protocol/*`.</li></ul> |
+| `match-field`       | oui    | \<aucun>   | Champ dans lequel rechercher `match-string`, parmi : <ul><li>"name" : Recherche dans `gmd:name/gco:CharacterString`.</li><li>"url" : recherche dans `gmd:linkage/gmd:URL` ;</li><li>"protocol" : recherche (textuelle) dans `gmd:protocol/*`.</li></ul> |
 | `match-string`      | oui    | \<aucun>   | Chaîne de caractères à rechercher dans `match-field`. |
 | `function-type`     | non    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
 | `override-existing` | non    | "no"       | Si "no", seules les ressources en ligne ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les ressources en ligne contenant déjà un `gmd:function` sont également prises en compte, et le `gmd:function` existant sera remplacé. |
@@ -25,13 +25,13 @@ Aucun.
 ## Motivation
 
 En ISO-19139, une *ressource en ligne* (`gmd:CI_OnlineResource`) permet d'accéder à la donnée ou à des informations complémentaires concernant la ressource. En DCAT, ces deux finalités sont représentées de manière différente :
-- les accès à la donnée sont des *distributions*, et
+- les accès à la donnée sont des *distributions* ;
 - les informations complémentaires sont des *pages*.
 
 Le convertisseur SEMICeu détermine la représentation DCAT selon l'heuristique suivante :
 - Une ressource en ligne est convertie en *distribution* si :
-  - son URL (`gmd:linkage`) contient "request=GetCapabilities", ou
-  - sa fonction (`gmd:function`) est de type "download, "offlineAccess" ou "order".
+  - soit son URL (`gmd:linkage`) contient "request=GetCapabilities" ;
+  - soit sa fonction (`gmd:function`) est de type "download, "offlineAccess" ou "order".
 - Tout le reste est représenté comme *page*.
 
 Pour les ressources en ligne de type OGC WFS/WMS/..., de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant leur URL pour la faire pointer sur la requête "GetCapabilities" du service (voir la transformation [distributions-ajout-parametres-ogc](distributions-ajout-parametres-ogc.md).
@@ -78,15 +78,15 @@ devient :
 ```
 
 Ce résultat peut etre obtenu avec les recherches suivantes (entre autres) :
-- `match-field` = "name" / `match-string` : "Téléchargement simple (Atom)".
-- `match-field` = "url" / `match-string` : "atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource"
+- `match-field` = "name" / `match-string` : "Téléchargement simple (Atom)" ;
+- `match-field` = "url" / `match-string` : "atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource".
 
 Exemples courants de recherches dans le champ "name" :
-- "Accès au lien ATOM de téléchargement"
-- "Accès au téléchargement des données"
-- "Téléchargement direct des données"
-- "Téléchargement simple (Atom)"
-- "Télécharger les données"
+- "Accès au lien ATOM de téléchargement" ;
+- "Accès au téléchargement des données" ;
+- "Téléchargement direct des données" ;
+- "Téléchargement simple (Atom)" ;
+- "Télécharger les données".
 
 Les recherches sur le champ "url" dépendront généralement de la plateforme utilisée par votre catalogue.
 

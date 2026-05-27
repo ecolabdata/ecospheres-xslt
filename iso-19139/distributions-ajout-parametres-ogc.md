@@ -23,13 +23,13 @@ Les ressources en ligne doivent contenir un élément `gmd:protocol`.
 ## Motivation
 
 En ISO-19139, une *ressource en ligne* (`gmd:CI_OnlineResource`) permet d'accéder à la donnée ou à des informations complémentaires concernant la ressource. En DCAT, ces deux finalités sont représentées de manière différente :
-- les accès à la donnée sont des *distributions*, et
+- les accès à la donnée sont des *distributions* ;
 - les informations complémentaires sont des *pages*.
 
 Le convertisseur SEMICeu détermine la représentation DCAT selon l'heuristique suivante :
 - Une ressource en ligne est convertie en *distribution* si :
-  - son URL (`gmd:linkage`) contient "request=GetCapabilities", ou
-  - sa fonction (`gmd:function`) est de type "download, "offlineAccess" ou "order".
+  - soit son URL (`gmd:linkage`) contient "request=GetCapabilities" ;
+  - soit sa fonction (`gmd:function`) est de type "download, "offlineAccess" ou "order".
 - Tout le reste est représenté comme *page*.
 
 Pour les ressources en ligne de type OGC WFS/WMS/etc., de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant leur URL pour la faire pointer sur la requête "GetCapabilities" du service (voir INSPIRE TG sections [3.3.3](https://github.com/INSPIRE-MIF/technical-guidelines/blob/main/metadata/metadata-iso19139/metadata-iso19139.adoc#333-inspire-view-service-linking) à 3.3.5).

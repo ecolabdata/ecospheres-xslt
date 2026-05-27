@@ -16,13 +16,13 @@ Aucun.
 ## Motivation
 
 ISO-19139 définit deux emplacements permettant de renseigner des informations de maintenance :
-1. `/gmd:MD_Metadata/gmd:metadataMaintenance`
-2. `/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance`
+1. `/gmd:MD_Metadata/gmd:metadataMaintenance` ;
+2. `/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance`.
 
 Ces deux emplacements n'ont pas la même sémantique (*metadata* vs *ressource*), mais :
-- Le Guide du CNIG n'aborde pas ces métadonnées.
-- Les Technical guidelines INSPIRE ne font référence qu'au [deuxième emplacement](https://github.com/INSPIRE-MIF/technical-guidelines/blob/main/metadata/metadata-iso19139/metadata-iso19139.adoc#c71-maintenance-information).
-- Le convertisseur SEMICeu ne prend en charge que le deuxième emplacement.
+- le Guide du CNIG n'aborde pas ces métadonnées ;
+- les Technical guidelines INSPIRE ne font référence qu'au [deuxième emplacement](https://github.com/INSPIRE-MIF/technical-guidelines/blob/main/metadata/metadata-iso19139/metadata-iso19139.adoc#c71-maintenance-information) ;
+- le convertisseur SEMICeu ne prend en charge que le deuxième emplacement.
 
 Nous constatons en pratique que certains catalogues utilisent le premier emplacement plutôt que le deuxième, sans faire de distinction sémantique. Dans ces cas, il convient de déplacer les informations de maintenance à l'endroit attendu par le convertisseur SEMICeu pour ne pas perdre les métadonnées.
 
