@@ -18,11 +18,11 @@ Aucun.
 L'utilisation du type "dataset" par défaut correspond au comportement d'autres outils de l'écosystème.
 
 
-## Effets data.gouv.fr
+## Effets sur data.gouv.fr
 
 Fiche moissonnable.
 
-Contexte : Datagouv ne moissonne que les types de ressources compatibles avec son modèle. Les ressources sans type sont ignorées.
+Contexte : data.gouv.fr ne moissonne que les types de ressources compatibles avec son modèle ; les ressources sans type sont donc ignorées.
 
 
 ## Exemples

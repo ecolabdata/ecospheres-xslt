@@ -27,7 +27,7 @@ Ces deux emplacements n'ont pas la même sémantique (*metadata* vs *ressource*)
 Nous constatons en pratique que certains catalogues utilisent le premier emplacement plutôt que le deuxième, sans faire de distinction sémantique. Dans ces cas, il convient de déplacer les informations de maintenance à l'endroit attendu par le convertisseur SEMICeu pour ne pas perdre les métadonnées.
 
 
-## Effets data.gouv.fr
+## Effets sur data.gouv.fr
 
 Présence de l'information dans l'onglet *Informations*, section *Extras*, clé "provenance".
 

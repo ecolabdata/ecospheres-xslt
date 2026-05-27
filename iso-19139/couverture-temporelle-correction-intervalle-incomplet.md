@@ -20,7 +20,7 @@ La [spécification GML](https://portal.ogc.org/files/?artifact_id=20509) défini
 La borne manquante est ajoutée avec la valeur "unknown", qui "indique qu'aucune valeur spécifique pour la position temporelle n'est fournie" (section 14.2.2.7).
 
 
-## Effets data.gouv.fr
+## Effets sur data.gouv.fr
 
 Affichage de la *Couverture temporelle* dans l'onglet *Informations*, section *Temporalité*.
 

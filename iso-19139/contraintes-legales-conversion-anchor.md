@@ -18,13 +18,13 @@ Aucun.
 Seules les contraintes (`gmd:OtherConstraints`) représentées sous forme d'URI (`gmx:Anchor`) sont converties en *licence* (`dct:license`) et *condition d'accès* (`dct:accessRight`) en DCAT. Les contraintes formulées en texte libre sont converties en *droit* générique (`dct:right`).
 
 
-## Effets data.gouv.fr
+## Effets sur data.gouv.fr
 
 Amélioration de la fiabilité des champs *Licence* et *Accès* dans l'encart métadonnées.
 
 Sur ecologie.data.gouv.fr, affichage des *Conditions d'accès et d'utilisation* dans l'onglet *Informations*.
 
-Contexte : Datagouv s'efforce de détecter la licence et les conditions d'accès quelles que soient leurs représentations DCAT, mais l'utilisation d'URIs garanti la détection correcte, alors que le texte libre peut ne pas être détecté.
+Contexte : data.gouv.fr s'efforce de détecter la licence et les conditions d'accès quelles que soient leurs représentations DCAT, mais l'utilisation d'URIs garanti la détection correcte, alors que le texte libre peut ne pas être détecté.
 
 
 ## Limites
