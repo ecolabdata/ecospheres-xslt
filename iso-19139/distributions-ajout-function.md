@@ -1,6 +1,6 @@
 ## Description
 
-Ajoute un élément de type `gmd:function` à une distribution.
+Ajoute un élément de type `gmd:function` à une ressource en ligne.
 
 
 ## Paramètres
@@ -12,7 +12,7 @@ Ajoute un élément de type `gmd:function` à une distribution.
 | `match-field`       | oui    | \<aucun>   | Champ dans lequel rechercher `match-string`, parmi : <ul><li>"name" : Recherche dans `gmd:name/gco:CharacterString`.</li><li>"url" : Recherche dans `gmd:linkage/gmd:URL`.</li><li>"protocol" : Recherche (textuelle) dans `gmd:protocol/*`.</li></ul> |
 | `match-string`      | oui    | \<aucun>   | Chaîne de caractères à rechercher dans `match-field`. |
 | `function-type`     | non    | "download" | Type de `gmd:function` à ajouter à la distribution, parmi "download", "offlineAccess", "order". |
-| `override-existing` | non    | "no"       | Si "no", seules les distributions ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les distributions contenant déjà un `gmd:function` sont également prises en compte, et un `gmd:function` existant sera remplacé. |
+| `override-existing` | non    | "no"       | Si "no", seules les ressources en ligne ne contenant pas de `gmd:function` sont prises en compte.<br/>Si "yes", les ressources en ligne contenant déjà un `gmd:function` sont également prises en compte, et le `gmd:function` existant sera remplacé. |
 
 </div></div></div></div>
 
@@ -24,23 +24,26 @@ Aucun.
 
 ## Motivation
 
-data.gouv.fr n'affiche que les distributions au sens DCAT dans l'onglet "Fichiers".
-Les autres distributions au sens ISO sont actuellement ignorées.
+En ISO-19139, une *ressource en ligne* (`gmd:CI_OnlineResource`) permet d'accéder à la donnée ou à des informations complémentaires concernant la ressource. En DCAT, ces deux finalités sont représentées de manière différente :
+- les accès à la donnée sont des *distributions*, et
+- les informations complémentaires sont des *pages*.
 
-Le convertisseur SEMICeu identifie une distribution (au sens ISO) comme distribution (au sens DCAT) uniquement dans les conditions suivantes :
-- l'URL de la distribution contient "request=GetCapabilities", ou
-- la distribution déclare une `gmd:function` de type "download, "offlineAccess" ou "order".
+Le convertisseur SEMICeu détermine la représentation DCAT selon l'heuristique suivante :
+- Une ressource en ligne est convertie en *distribution* si :
+  - son URL (`gmd:linkage`) contient "request=GetCapabilities", ou
+  - sa fonction (`gmd:function`) est de type "download, "offlineAccess" ou "order".
+- Tout le reste est représenté comme *page*.
 
-En attendant une éventuelle évolution de ces contraintes, les moyens de faire figurer un élément dans l'onglet "Fichiers" d'une fiche data.gouv.fr sont donc ceux imposés par la conversion SEMICeu.
+Pour les ressources en ligne de type OGC WFS/WMS/..., de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant leur URL pour la faire pointer sur la requête "GetCapabilities" du service (voir la transformation [distributions-ajout-parametres-ogc](distributions-ajout-parametres-ogc.md).
 
-Pour les distributions de type OGC WFS/WMS/etc., de nombreuses fiches INSPIRE peuvent répondre à ces contraintes simplement en corrigeant leur URL pour la faire pointer sur la requête "GetCapabilities" du service (voir la transformation [distributions-ajout-parametres-ogc](distributions-ajout-parametres-ogc.md).
+Cependant, pour d'autres types de ressources en ligne (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter `gmd:function` de type "download".
 
-Cependant, pour d'autres types de distributions (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter un `gmd:function` de type "download".
+
 
 
 ## Limites
 
-Seule la recherche par chaîne de caractères *exacte* est possible actuellement.
+Seule la recherche par chaîne de caractères *exacte* est possible avec le paramètre `match-string`.
 
 Attention à utiliser des chaîne de caractères suffisamment précises pour éviter les faux positifs.
 
@@ -74,7 +77,7 @@ devient :
 </gmd:CI_OnlineResource>
 ```
 
-Ce résultat peut etre obtenu avec les recherches suivantes (entre autres) : 
+Ce résultat peut etre obtenu avec les recherches suivantes (entre autres) :
 - `match-field` = "name" / `match-string` : "Téléchargement simple (Atom)".
 - `match-field` = "url" / `match-string` : "atom.geo-ide.developpement-durable.gouv.fr/atomArchive/GetResource"
 
