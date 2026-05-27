@@ -36,6 +36,14 @@ Pour ces raisons, lorsque `safe-mode` est activé (mode par défaut), cette tran
 Cette liste pourra être complétée à mesure que nous identifions d'autres cas pertinents.
 
 
+## Effets data.gouv.fr
+
+`safe-mode` activé :
+- Corrige certaines erreurs "missing identifier" lors du moissonnage, mais attention ces erreurs peuvent avoir d'autres causes (hors périmètre de cette transformation).
+
+`safe-mode` désactivé : Peut améliorer la fiabilité du moissonnage, mais attention à la différence de sémantique vide/manquant (voir section *Limites*).
+
+
 ## Limites
 
 Cette transformation fait l'hypothèse que l'occurrence vide d'une balise est sémantiquement équivalent à l'absence de cette balise. Comme indiqué dans la section *Motivation*, il peut éventuellement exister des cas particuliers où cette hypothèse s'avère fausse.

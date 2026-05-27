@@ -39,6 +39,11 @@ Pour les ressources en ligne de type OGC WFS/WMS/..., de nombreuses fiches INSPI
 Cependant, pour d'autres types de ressources en ligne (par exemple ATOM) et certains cas particuliers, il est nécessaire d'ajouter `gmd:function` de type "download".
 
 
+## Effets data.gouv.fr
+
+Affichage de la ressource en ligne sous *Fichiers principaux* ou *API* (selon le type) dans l'onglet *Fichiers*.
+
+Contexte : Pour les fiches moissonnées, seules les *distributions* (au sens DCAT) sont affichées dans l'onglet *Fichiers*. Les autres types de ressources en ligne sont actuellement ignorés.
 
 
 ## Limites

@@ -22,6 +22,11 @@ Ce XSLT a pour objectif de :
 - minimiser les modifications internes, en supprimant les namespaces XML inutilisés, pour éviter de générer des modifications liées à ces namespaces inutiles.
 
 
+## Effets data.gouv.fr
+
+Aucun.
+
+
 ## Limites
 
 Cette transformation va modifier l'ensemble des fiches sélectionnées.
