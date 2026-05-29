@@ -37,6 +37,12 @@ Pour les ressources en ligne de type OGC WFS/WMS/etc., de nombreuses fiches INSP
 Pour d'autres types de ressources en ligne (par exemple ATOM) et certains cas particuliers, voir la transformation [distributions-ajout-function](distributions-ajout-function.md).
 
 
+## Effets sur data.gouv.fr
+
+Affichage de la ressource en ligne sous *Fichiers principaux* ou *API* (selon le type) dans l'onglet *Fichiers*.
+
+Contexte : pour les fiches moissonnées, seules les *distributions* (au sens DCAT) sont affichées dans l'onglet *Fichiers* ; les autres types de ressources en ligne sont actuellement ignorés.
+
 
 ## Exemples
 

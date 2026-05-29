@@ -20,6 +20,13 @@ Lorsqu'un élément `gmd:resourceConstraints` contient à la fois un élément `
 Un tel cas ne respectant pas le standard INSPIRE, il est difficile motiver une évolution du convertisseur SEMICeu.
 
 
+## Effets sur data.gouv.fr
+
+Aucun sur www.data.gouv.fr.
+
+Sur ecologie.data.gouv.fr, élimine les doublons dans les *Conditions d'accès et d'utilisation* dans l'onglet *Informations*.
+
+
 ## Limites
 
 La transformation prend en charge uniquement les cas pour lesquels la séparation des conditions d'utilisation et d'accès :

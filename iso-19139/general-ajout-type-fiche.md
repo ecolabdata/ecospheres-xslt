@@ -18,6 +18,13 @@ Aucun.
 L'utilisation du type "dataset" par défaut correspond au comportement d'autres outils de l'écosystème.
 
 
+## Effets sur data.gouv.fr
+
+Fiche moissonnable.
+
+Contexte : data.gouv.fr ne moissonne que les types de ressources compatibles avec son modèle ; les ressources sans type sont donc ignorées.
+
+
 ## Exemples
 
 Lorsque `gmd:hierarchyLevel` est absent, la transformation ajoute :
